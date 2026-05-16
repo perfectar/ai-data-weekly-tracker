@@ -1,0 +1,41 @@
+[
+  {
+    "week": "2026-W20",
+    "start": "2026-04-16",
+    "end": "2026-05-16",
+    "paper_count": 10,
+    "top_titles": [
+      "Learning Multi-Indicator Weights for Data Selection",
+      "Mid-Training with Self-Generated Data Improves Reinforcement Learning in Language Models",
+      "Data Language Models"
+    ],
+    "trends": [
+      {
+        "name": "数据选择与过滤",
+        "count": 2
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 2
+      },
+      {
+        "name": "数据集与基准",
+        "count": 4
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 2
+      },
+      {
+        "name": "数据治理与血缘",
+        "count": 2
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 2
+      }
+    ],
+    "file": "weekly/2026-W20.md",
+    "updated_at": "2026-05-16T04:10:00+00:00"
+  }
+]

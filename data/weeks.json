@@ -1,5 +1,40 @@
 [
   {
+    "week": "2026-W24",
+    "start": "2026-06-08",
+    "end": "2026-06-14",
+    "paper_count": 20,
+    "top_titles": [
+      "An End-to-End Hybrid Framework for Rumour Detection in Low-Resources Algerian Dialect",
+      "TimeLens: On-Device Artifact Recognition with Retrieval-Augmented Question Answering for the Grand Egyptian Museum",
+      "LEDGER: A Long-Context Benchmark of Corporate Annual Reports for Grounded Financial Retrieval and Extraction"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 19
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 10
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 6
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 2
+      },
+      {
+        "name": "数据治理与血缘",
+        "count": 1
+      }
+    ],
+    "file": "weekly/2026-W24.md",
+    "updated_at": "2026-06-14T02:00:09+00:00"
+  },
+  {
     "week": "2026-W23",
     "start": "2026-06-01",
     "end": "2026-06-07",

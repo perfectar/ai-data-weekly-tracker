@@ -9,6 +9,7 @@ import os
 import smtplib
 import subprocess
 import sys
+import urllib.parse
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
@@ -85,6 +86,20 @@ def latest_week_entry() -> dict:
     return weeks[0] if weeks else {}
 
 
+def absolute_report_url(base_url: str, path: str) -> str:
+    if not path:
+        return base_url
+    return urllib.parse.urljoin(base_url.rstrip("/") + "/", path)
+
+
+def latest_week_html_path(week: dict) -> str:
+    html_file = week.get("html_file")
+    if html_file:
+        return str(html_file)
+    markdown_file = str(week.get("file", ""))
+    return markdown_file[:-3] + ".html" if markdown_file.endswith(".md") else markdown_file
+
+
 def send_success_email(changed: bool) -> None:
     env = load_email_env()
     required = ["GMAIL_SMTP_USER", "GMAIL_APP_PASSWORD", "NOTICE_TO"]
@@ -98,6 +113,8 @@ def send_success_email(changed: bool) -> None:
     week_name = week.get("week", "unknown week")
     paper_count = week.get("paper_count", "unknown")
     changed_text = "已生成并推送新的周报。" if changed else "本次运行成功，但没有检测到需要提交的新变化。"
+    week_url = absolute_report_url(repo_url, latest_week_html_path(week))
+    markdown_url = absolute_report_url(repo_url, str(week.get("file", "")))
 
     message = EmailMessage()
     message["From"] = env["GMAIL_SMTP_USER"]
@@ -113,8 +130,9 @@ def send_success_email(changed: bool) -> None:
                 f"论文数量：{paper_count}",
                 f"状态：{changed_text}",
                 "",
-                f"网页：{repo_url}",
-                f"Markdown：{repo_url}{week.get('file', '')}",
+                f"本周可读网页：{week_url}",
+                f"周报首页：{repo_url}",
+                f"Markdown 源文件：{markdown_url}",
                 "",
                 "这封邮件由本地 ai-data-weekly-tracker 自动发送。",
             ]

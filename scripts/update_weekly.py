@@ -304,6 +304,7 @@ def update_weeks_index(week_label: str, start_date: date, end_date: date, papers
         "top_titles": [paper.title for paper in papers[:3]],
         "trends": [{"name": name, "count": count} for name, count in trend_counts(papers)],
         "file": f"weekly/{week_label}.md",
+        "html_file": f"weekly/{week_label}.html",
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
 

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W22</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W22.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W22</h1>
+<ul>
+<li><strong>周期</strong>：2026-05-25 至 2026-05-31</li>
+<li><strong>生成时间</strong>：2026-05-31 02:00 UTC</li>
+<li><strong>论文数量</strong>：20</li>
+<li><strong>范围</strong>：arXiv cs.AI、cs.CL、cs.LG、cs.CV、stat.ML 中与 AI 数据相关的近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>20</strong> 篇数据相关论文，主要集中在：数据集与基准（19）、标注、隐私与安全数据（12）、表格、语音与非文本数据（7）、合成数据与自生成数据（4）。</p>
+<p>优先关注前三篇：LLMSurgeon: Diagnosing Data Mixture of Large Language Models；Statistical Embeddings for Similarity, Retrieval, and Interpretable Alignment of Numeric Tabular Datasets；YoCausal: How Far is Video Generation from World Model? A Causality Perspective。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：19 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：12 篇相关论文。</li>
+<li><strong>表格、语音与非文本数据</strong>：7 篇相关论文。</li>
+<li><strong>合成数据与自生成数据</strong>：4 篇相关论文。</li>
+<li><strong>数据选择与过滤</strong>：3 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. LLMSurgeon: Diagnosing Data Mixture of Large Language Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Yaxin Luo, Jiacheng Cui, Xiaohan Zhao, Xinyi Shang, Jiacheng Liu, Xinyue Bi, et al.</li>
+<li><strong>关键词</strong>：training data、pretraining data、data mixture、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30348v1">http://arxiv.org/abs/2605.30348v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The pretraining data mixture of Large Language Models (LLMs) constitutes their &quot;digital DNA&quot;, shaping model behaviors, capabilities, and failure modes. Yet this composition is rarely disclosed, making post-hoc auditing of data combination or provenance difficult. In this work, we formalize $\textbf{Data Mixture Surgery (DMS)}$: given only generated text from a target LLM, estimate the domain-level distribution of its pretraining corpus under a predefined taxonomy. We propose $\textbf{LLMSurgeon}$, a strong framework that casts DMS as an inverse problem under the label-shift assumption. Rather than directly aggregating classifier outputs, LLMSurgeon estimates a calibrated $\textit{soft}$ confusion matrix and solves a constrained inverse problem to correct systematic domain confusion and recover the latent mixture prior. To evaluate, we introduce $\textbf{LLMScan}$, a recipe-verifiable evaluation suite built from open-source LLMs with transparent pretraining mixtures. Across LLMScan, LLMSurgeon recovers domain mixtures with high fidelity under fixed protocols. Our work presents a practical, post- hoc approach for auditing the digital DNA of foundation models without access to their training data.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。</p>
+<h3>2. Statistical Embeddings for Similarity, Retrieval, and Interpretable Alignment of Numeric Tabular Datasets</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：M. Ross Kunz, John Merickel, Keith Wilson</li>
+<li><strong>关键词</strong>：dataset、benchmark、tabular data、privacy</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30289v1">http://arxiv.org/abs/2605.30289v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Numeric tabular datasets are the dominant data format in scientific practice, yet large language models lack native mechanisms for representing numeric datasets in a meaningful way across heterogeneous feature spaces. Existing approaches either target predictive modeling over individual datasets, which requires a shared set of variable definitions, or lack mechanisms for interpretable cross-dataset alignment. The proposed methodology characterizes numeric tabular datasets through structured exploratory data analysis descriptors, embeds those descriptors into a shared vector space using a pretrained sentence transformer, and quantifies cross-dataset similarity via Canonical Correlation Analysis (CCA). Furthermore, a penalized formulation of CCA is applied to recover sparse, interpretable variable-level correspondences between datasets, identifying which statistical descriptors or variable-level quantities drive cross-dataset alignment without requiring shared variable names or feature conventions. Differential privacy is optionally applied to the descriptor set prior to embedding, supporting deployment in sensitive data contexts without requiring access to raw observations at time of comparison. The methodology is evaluated across 15 datasets spanning general-purpose benchmarks, materials informatics, and nuclear-grade graphite characterization. Results demonstrate a total P@1 score of 0.9, with known nearest-neighbor retrieval and cluster structure remaining robust across embedding ablations and differential privacy budgets. The proposed framework provides a principled pathway for integrating heterogeneous numeric data into retrieval-augmented generation pipelines while preserving statistical context, with direct applications to data-driven algorithm selection and simulation model initialization for unknown datasets.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>3. YoCausal: How Far is Video Generation from World Model? A Causality Perspective</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：You-Zhe Xie, Yu-Hsuan Li, Jie-Ying Lee, Kaipeng Zhang, Yu-Lun Liu, Zhixiang Wang</li>
+<li><strong>关键词</strong>：dataset、benchmark、synthetic data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30346v1">http://arxiv.org/abs/2605.30346v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>As video diffusion models (VDMs) advance toward world models, a key question arises: do they truly understand causality, or merely overfit to statistical temporal patterns? Existing benchmarks mostly rely on synthetic data, limiting real-world generalization due to the sim-to-real gap. We present YoCausal, a two-level benchmark inspired by the Violation of Expectation (VoE) paradigm from cognitive science. By temporally reversing real-world videos at zero cost as natural counterfactual samples, YoCausal establishes an arbitrarily extensible evaluation protocol. Level 1 introduces the Reverse Surprise Index (RSI), quantifying arrow-of-time perception via denoising loss. Level 2 introduces the Causality Cognition Index (CCI), which leverages a VLM to stratify datasets into causal and non-causal subsets, disentangling genuine causal reasoning from temporal bias. Evaluation of 13 state-of-the-art VDMs reveals that perceiving the arrow of time does not imply understanding causality, and a significant gap persists relative to human-level causal cognition.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<h3>4. MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Valentina Bui Muti, Eugénie Dulout, Ziquan Fu</li>
+<li><strong>关键词</strong>：dataset、benchmark、synthetic data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30295v1">http://arxiv.org/abs/2605.30295v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Large language models (LLMs) show promise for clinical reasoning and decision support, but evaluation in realistic, electronic health record-congruent settings remains limited. Existing benchmarks often rely on static datasets or unstructured inputs that do not reflect the structured, interoperable data formats used in clinical systems. We introduce a pipeline for generating clinically realistic HL7 FHIR R4 bundles from unstructured text, enabling controllable evaluation of clinical decision support systems. The pipeline combines staged LLM generation with terminology-grounded validation and repair to reduce hallucinated codes and enforce structural and semantic consistency. Applying this approach to MedCaseReasoning, we construct MedCase- Structured, a synthetic dataset aligned with clinician-authored diagnostic cases, achieving valid FHIR generation for 82.5% of cases. Evaluation on MedCase-Structured reveals consistently lower diagnostic accuracy for LLMs on structured FHIR inputs than with plain text, highlighting the importance of deployment-aligned benchmarking.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<h3>5. MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Haowen Wang, Yaxin Du, Jian Yang, Jiajun Wu, Shukai Liu, Yuxuan Zhang, et al.</li>
+<li><strong>关键词</strong>：data selection、benchmark、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30288v1">http://arxiv.org/abs/2605.30288v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Mid-training has become an important stage in modern LLM development, using large-scale curated mixtures to strengthen capabilities before final post-training. Its data selection problem is distinct: the data are optimized under a pretraining-style objective at near-pretraining scale, but are curated toward downstream capabilities and drawn from heterogeneous sources with different formats and training roles. As a result, effective selection requires both scalability and source-adaptive semantic criteria. Existing model-based methods scale well, but provide only implicit quality signals. Semantic selection methods offer stronger judgments, but usually assume fixed rubrics or standardized data formats. To address this mismatch, we propose MIRA, a source-aware filtering framework based on self-anchored rubric discovery. The key idea is to make rubric construction part of data selection: MIRA first discovers what should be evaluated for each source group, then distills those judgments into scalable student scorers for full-corpus filtering. On code-oriented mid-training with 21 sources and 5 source groups, MIRA outperforms selection baselines across nine code benchmarks and matches the full-corpus run while using only half the tokens.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。</p>
+<h3>6. LoMo: Local Modality Substitution for Deeper Vision-Language Fusion</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Feng Han, Zhixiong Zhang, Zheming Liang, Yibin Wang, Jiaqi Wang</li>
+<li><strong>关键词</strong>：data curation、dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30265v1">http://arxiv.org/abs/2605.30265v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Vision-Language Models (VLMs) have achieved substantial progress across a wide range of understanding and reasoning tasks, driven by large-scale image-text training aimed at multimodal fusion. Ideally, replacing a textual question with its rendered-image counterpart should leave model performance essentially unaffected. In practice, however, such modality substitution induces dramatic performance degradation. We attribute this &quot;carrier sensitivity&quot; issue to an inherent bias in current training corpora. Across prevalent datasets such as image captioning, VQA, OCR, and web-sourced interleaved data, text and images are typically organized into distinct and asymmetric roles, with text serving as linguistic queries and images as visual references. Such data bias leads VLMs to exhibit distinct preferences for information acquisition across different modalities. Consequently, VLMs fail to align representations of semantically equivalent content across textual and visual carriers, making model reasoning fragile under modality substitution. To address this, we propose Local Modality Substitution (LoMo), a lightweight, architecture-agnostic data curation paradigm designed to provide supervision for cross-modal representational invariance between semantically equivalent text and image carriers. LoMo achieves this by reformulating single-modality prompts into seamlessly interleaved multimodal sequences. It dynamically selects target text spans and recasts them as rendered images, thereby preserving the same semantics across &quot;text, visual, text&quot; carriers. Extensive experiments across 13 diverse multimodal benchmarks demonstrate that LoMo significantly improves overall multimodal reasoning and yields deeper cross-modal fusion. Specifically, it delivers consistent gains across foundational models, improving over standard SFT by 2.67 points on LLaVA- OneVision-1.5-8B and 2.82 points on Qwen3.5-9B.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>7. xModel-KD: Cross-modal Knowledge Distillation for 3D Scene Perception using LiDAR</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Thenukan Pathmanathan, Kanchan Keisham, Thangarajah Akilan</li>
+<li><strong>关键词</strong>：dataset、annotation、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30111v1">http://arxiv.org/abs/2605.30111v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Point cloud segmentation is a fundamental task in 3D scene understanding. Its progress is constrained by the high cost and time required for dense 3D annotations, making labeled samples difficult to obtain. Beyond annotation scarcity, different sensing modalities face inherent limitations. 2D images provide rich texture and appearance cues, yet they lack explicit depth and geometric structure. In contrast, 3D point clouds capture accurate spatial geometry but are sparse and contain no texture information. As a result, relying on a single modality restricts the richness of learned representations and weakens generalization. Although recent multi-modal methods that combine 3D point clouds with 2D images have demonstrated strong performance in tasks such as classification and retrieval, they typically depend on large-scale labeled datasets and have not been fully exploited for data-efficient dense prediction. To address these limitations, we propose a novel cross-modal knowledge distillation framework, xModel-KD, for 3D point cloud segmentation. Our method exploits the complementary strengths of 2D texture and 3D geometry by learning unified per-point representations through cross- modal alignment. Specifically, we design a cross-modal fusion encoder trained with a contrastive objective that enforces feature consistency between corresponding 2D and 3D representations across multiple views. By integrating powerful pre-trained backbones with a targeted fusion strategy, the proposed framework effectively transfers appearance cues from images to geometry-aware point features. Experimental results show that cross- modal fusion achieves a 2% absolute improvement in mIoU over a LiDAR-only baseline, demonstrating the benefit of leveraging complementary multi-modal information for scalable and annotation-efficient 3D scene understanding.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>8. DocRetriever: A Plug-and-Play Framework for Multimodal Document Retrieval with Comprehensive Benchmark</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Ruofan Hu, Menghui Zhu, Jieming Zhu, Bo Chen, Shengyang Xu, Minjie Hong, et al.</li>
+<li><strong>关键词</strong>：benchmark、training data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30027v1">http://arxiv.org/abs/2605.30027v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Multimodal documents contain diverse elements, such as tables, figures, and layouts, which can complicate retrieval tasks. While current approaches typically combine dense visual embedding models with supervised rerankers to achieve high-precision retrieval, they face inherent limitations. First, the coarse-grained nature of dense embeddings tends to obfuscate explicit semantics, failing to leverage structurally salient information. Second, supervised reranking models suffer from generalization bottlenecks, as their performance heavily relies on domain-specific training data. Furthermore, existing benchmarks often lack diverse assessment dimensions and comprehensive relevance annotations, limiting reliable evaluation. To address these challenges, we propose DocRetriever, a plug-and-play framework. It enhances visual retrieval via a layout-aware sparse embedding technique, enabling effective hybrid encoding without the overhead of optical character recognition (OCR). We also introduce a generalizable reranker that leverages reasoning-augmented demonstrations and optimized sampling to improve accuracy in few-shot settings. Finally, we construct a new benchmark, MultiDocR, to enable more rigorous evaluation. Experiments across diverse benchmarks validate DocRetriever&#x27;s superiority over state-of-the-art methods.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>9. Make LLM Learn to Synthesize from Streaming Experiences through Feedback</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Zhenlin Hu, Yan Wang, Zhen Bi, Zihao Xue, Bingyu Zhu, Longtao Huang, et al.</li>
+<li><strong>关键词</strong>：benchmark、synthetic data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.29940v1">http://arxiv.org/abs/2605.29940v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Large language models (LLMs) have been widely adopted for synthetic data generation, significantly reducing annotation costs. However, most existing studies treat synthesis as a set of isolated tasks and overlook a more fundamental question: whether a model can learn to synthesize by accumulating experience from past tasks and transferring it to future ones. In this work, we introduce StreamSynth, a new setting in which synthesis tasks arrive sequentially and experience from historical tasks provides informative signals for future synthesis. To address this setting, we propose SynLearner, a general framework that enables synthesis models to acquire reusable synthesis experience over a task stream. Instead of generating data independently for each task, SynLearner encourages the model to explore diverse synthesis patterns, learn from feedback, and balance sample quality with set-level diversity as tasks evolve. Extensive experiments across multiple benchmarks show that SynLearner effectively leverages experience from earlier tasks to improve synthesis performance on later ones, exhibiting consistent cross-task transferability. These findings provide evidence for the feasibility of StreamSynth and highlight synthetic data generation as an experience-driven process that can benefit from task streams.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<h3>10. CityGen: Structure-Guided City-Style Synthesis for Cross-City Autonomous Driving</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Zezhong Qian, Zhao Yang, Lu Tan, Zhihao Yan, Weiyi Hong, Haizhuang Liu, et al.</li>
+<li><strong>关键词</strong>：benchmark、synthetic data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.29935v1">http://arxiv.org/abs/2605.29935v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Autonomous driving systems are commonly trained and evaluated within limited geographic regions, which hinders their scalability when deployed in new cities. However, significant domain shifts in appearance, road topology, and traffic patterns often cause severe performance degradation under cross-city deployment. Existing approaches based on domain adaptation, data augmentation, or synthetic data generation typically rely on labeled target data, city-specific annotations, or task-specific designs, limiting their scalability and effectiveness for holistic evaluation. In this paper, we introduce CityTransfer-Bench, a geographically disjoint benchmark for evaluating cross-city generalization across perception, segmentation, and planning, and propose CityGen, a diffusion-based generative framework that performs zero-label city adaptation via HD- map-conditioned synthesis guided by city-level visual prompts. Extensive experiments demonstrate that CityGen consistently improves cross-city robustness across multiple tasks, establishing a scalable and label-efficient foundation for generalizable autonomous driving.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<h3>11. GMOS: Grounding Moving Object Segmentation in 3D Space and Time</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Junyu Xie, Tengda Han, Weidi Xie, Andrew Zisserman</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30352v1">http://arxiv.org/abs/2605.30352v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Moving Object Segmentation (MOS) aims to discover, segment, and track objects that move independently of the camera. Current MOS methods, however, exhibit two fundamental limitations: they rely on pre-computed 2D auxiliary modalities such as optical flow or point trajectories that lack 3D geometric information, and they treat motion as a sequence-level attribute, overlooking the instantaneous motion state of each object. We address both by grounding MOS in 3D space and time, and propose GMOS, a framework that operates directly on RGB video to produce 3D-aware, temporally fine-grained segmentation of multiple moving objects, alongside a foreground--background variant GMOS-S for faster deployment. To support training and evaluation in this regime, we curate GMOS-2K, a dataset of 2,210 real-world videos with per-object temporal motion annotations drawn from five established Video Object Segmentation (VOS) benchmarks, and formalise MOS-I (&quot;I&quot; for instantaneous), a temporally fine-grained evaluation protocol with three complementary metrics. GMOS achieves state-of-the-art results across MOS, MOS-I, and Unsupervised VOS benchmarks, while running significantly faster than prior multi-object MOS methods and supporting online inference for streaming deployment.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>12. Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Xiaona Zhou, Muntasir Wahed, Tianjiao Yu, Constantin Brif, Ismini Lourentzou</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30344v1">http://arxiv.org/abs/2605.30344v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance when applying large language or multimodal models to finding abnormal patterns in sequential data. Public anomaly detection benchmarks typically provide interval annotations but not natural-language rationales, making it difficult to fine-tune VLMs to produce grounded, interpretable decisions. To address this gap, we construct VisAnomBench, a curated benchmark built from public time-series datasets and augmented with high-quality anomaly explanations selected from multiple large VLMs using fine-grained, task-specific rewards. Through fine-tuning on this benchmark, we develop VisAnomReasoner, a parameter- efficient VLM for time-series anomaly detection. Experimental results on VisAnomBench show that VisAnomReasoner achieves more accurate anomaly localization and consistently outperforms all baselines, with improvements of at least 21.23 and 23.87 percentage points in precision and F1, respectively. Additional experiments on the TSB-AD-U benchmark demonstrate strong cross-benchmark generalization, with VisAnomReasoner improving precision and F1 by 9.57 and 13.39 percentage points, respectively.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>13. GPIC: A Giant Permissive Image Corpus for Visual Generation</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Keshigeyan Chandrasegaran, Kyle Sargent, Suchir Agarwal, Michael Jang, Michael Poli, Juan Carlos Niebles, et al.</li>
+<li><strong>关键词</strong>：dataset、benchmark、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30341v1">http://arxiv.org/abs/2605.30341v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Studying scalable methods for visual generative modeling requires large, accessible, and stable datasets. We introduce GPIC, a Giant Permissive Image Corpus of approximately 28 trillion pixels. GPIC comprises diverse internet images captioned by a state-of-the-art vision-language model, including 100M training, 200K validation, and 1M test examples. Moreover, all GPIC images are permissively licensed for both research and commercial use. GPIC is safety-filtered, deduplicated, and centrally hosted on Hugging Face. We provide a benchmarking protocol for generative modeling on GPIC. Finally, we provide a reference baseline for pixel-space flow matching on GPIC. Our dataset, benchmark, and models are available at https://huggingface.co/datasets/stanford-vision-lab/gpic. Evaluation toolkit and code are available at https://gpic.stanford.edu</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>14. BullingerDB: A Dataset for Handwritten Text Recognition and Writer Retrieval</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Marco Peer, Anna-Scius Bertrand, Patricia Scheurer, Andreas Fischer</li>
+<li><strong>关键词</strong>：dataset、benchmark、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30235v1">http://arxiv.org/abs/2605.30235v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>We present BullingerDB, a large-scale benchmark dataset for historical document analysis based on the correspondence of Heinrich Bullinger (1504-1575). The corpus comprises 20,898 pages and 499,222 text lines written by 796 writers over six decades, featuring stylistic variation, multilingual content (mostly Latin and Early New High German) as well as meta-information such as writer identity and time. We evaluate BullingerDB on text recognition and writer retrieval. TrOCR, the best performing model, achieves a CER of 9.1%. For writer retrieval, we introduce a temporal nDCG metric to assess time-aware retrieval. While temporally coherent retrieval is achievable, mAP (78.3%) scores indicate challenges due to long-term stylistic variation. With BullingerDB, we aim to establish a new benchmark for multilingual historical text recognition and temporally- aware writer analysis.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>15. FakeVLM-R1: Internalizing Physical Laws via CoT for Synthetic Image Detection</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Leqi Zhu, Junyan Ye, Kaiqing Lin, Zhiyuan Yan, Conghui He, Weijia Li</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30062v1">http://arxiv.org/abs/2605.30062v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The development of generative artificial intelligence technologies has propelled the visual realism of synthetic images to an unprecedented level. Although current interpretable detection methods based on Large Multimodal Models (LMMs) have made certain progress, they still rely on imitation learning derived from massive volumes of forged data. Consequently, they lack genuine causal reasoning capabilities and are prone to explanatory hallucinations. To overcome this bottleneck, we propose FakeVLM-R1, aiming to endow the model with human-like critical thinking capabilities when performing synthetic detection tasks. Building upon Supervised Fine-Tuning (SFT), this framework integrates Group Relative Policy Optimization (GRPO) with a Critical Thinking Chain-of- Thought (CoT) mechanism. During the inference phase, the model executes a &quot;bidirectional dialectical reasoning&quot; process: while proposing a forgery hypothesis, it must simultaneously invoke physical commonsense to construct an authenticity counter-proof. Furthermore, we constructed the FakeClue++ dataset with high-quality samples, which extensively introduces annotations guided by the physical laws of authentic images, providing a unified authenticity anchor for the model. Experiments confirm that FakeVLM-R1 achieves SOTA performance the evaluated models across multiple benchmarks. It not only achieves high-precision, logically interpretable detection but also resolves the over-rejection bias of existing methods against real images, demonstrating generalization and robustness against perturbations.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>16. ExCAM: Explainable Cultural Awareness Metrics</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Christoph Leiter, Haiyue Song, Hour Kaing, Jin Tei, Hideki Tanaka, Masao Utiyama, et al.</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.29897v1">http://arxiv.org/abs/2605.29897v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Evaluating the cultural awareness of large language models is crucial to ensure the fairness of generated text and the generalizability of applications across the world. Recent benchmarks explore cultural goods like food or values like behavior in stressful situations through the lens of question answering or text generation tasks. However, creating these benchmarks requires time-intensive and costly human annotations. Also, benchmarks that evaluate cultural awareness in free text are scarce and often rely on dated evaluation mechanisms. To address this gap, we introduce ExCAM, an Explainable Cultural Awareness Metric, which is, to our knowledge, the first dedicated evaluation metric that identifies, rates and explains cultural errors in instruction-output pairs. To train and evaluate ExCAM, we introduce ExCAM40k, a dataset comprised of nine existing benchmarks that we reformat and enhance with synthetic errors. Compared to several baselines, including GPT-5, ExCAM achieves the highest error detection rate with up to 80% accuracy on a balanced test set. Therefore, ExCAM opens the pathway towards fine- grained and explainable cultural evaluation of free text.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>17. Fairness-Aware Federated Learning with Trajectory Shapley Value</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Daniel Kuznetsov, Ziqi Wang</li>
+<li><strong>关键词</strong>：dataset、benchmark、privacy</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30336v1">http://arxiv.org/abs/2605.30336v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Federated learning is an emerging distributed paradigm that addresses the challenges posed by heterogeneous, privacy-sensitive data. It enables multiple clients to train a model collaboratively by aggregating their local updates at a server. However, conventional aggregation schemes typically use fixed weights that fail to reflect unequal and time-varying client contributions, leading to biased and unstable learning. To improve fairness and stability, we propose the Trajectory Shapley Value (TSV), a contribution metric that evaluates how each client influences the optimization trajectory of the global model using a validation-based, temporally consistent utility. Building on TSV, we design FedTSV, an adaptive aggregation method that converts per- round evaluations into dynamic client weights, allowing the server to respond to heterogeneous and adversarial participation in real time. Experiments on benchmark datasets show that FedTSV accelerates convergence, improves robustness, and yields more equitable contribution assessments, thereby providing a principled foundation for fairness-aware federated optimization.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>18. Demystifying Data Organization for Enhanced LLM Training</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Yalun Dai, Yangyu Huang, Tongshen Yang, Yonghan Wang, Xin Zhang, Wenshan Wu, et al.</li>
+<li><strong>关键词</strong>：data selection、data curation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30334v1">http://arxiv.org/abs/2605.30334v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Large Language Models (LLMs) have revolutionized various fields, yet their training efficiency is heavily reliant on effective data curation. While data selection has been widely studied, the strategic data organization for enhanced training remains an underexplored area, particularly since current LLMs are often trained for only one or a few epochs. This paper systematically explores the influence of data organization on LLM training by reusing pre-computed sample-level scores originally generated for data efficiency, thereby incurring minimal additional computational overhead. We identify and formalize four key guidelines for optimizing data organization: Boundary Sharpening, Cyclic Scheduling, Curriculum Continuity, and Local Diversity. Guided by them, we introduce two novel data ordering methods termed STR and SAW. Extensive experiments across different model scales and data sizes, encompassing both pre-training and SFT stages, validate the effectiveness of our summarized guidelines. They also demonstrate the robustness of our proposed data ordering methods in enhancing the stability and performance of LLM training. Github Link: https://github.com/microsoft/data-efficacy/</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。</p>
+<h3>19. CCS: Clinical Consensus Selection for Radiology Report Generation</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Xi Zhang, Yingshu Li, Zaiqiao Meng, Jake Lever, Edmond S. L. Ho</li>
+<li><strong>关键词</strong>：dataset、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30131v1">http://arxiv.org/abs/2605.30131v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Radiology report generation (RRG) is commonly formulated as a single-path generation task, where a multimodal large language model (MLLM) produces one decoded report as the final output. While recent progress has largely been driven by scaling training data, model capacity, and retrieval mechanisms, improving report quality at inference time remains underexplored. In this work, we observe that fixed radiology MLLMs often generate clinically stronger reports elsewhere in their candidate pool than the one selected by default decoding, suggesting that inference-time decision making remains an overlooked bottleneck. To address this, we propose Clinical Consensus Selection (CCS), a decoder-agnostic inference-time selection framework that samples multiple candidate reports and selects the one with the highest clinical consensus across the rollout pool. CCS unifies text-based utilities with a radiology-adapted utility computed by an image-- report-trained multimodal embedder, which measures candidate agreement beyond surface- level textual similarity. Across three datasets and multiple radiology MLLMs, CCS consistently improves inference-time performance over single-path decoding and generic Best-of-N baselines, with particularly clear gains on clinical metrics. Further analysis shows that image-grounded utility forms a selection axis distinct from textual consensus and that substantial headroom remains for improving RRG at inference time.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h3>20. ExDBSCAN: Explaining DBSCAN with Counterfactual Reasoning -- Additional Material</h3>
+<ul>
+<li><strong>日期</strong>：2026-05-28</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Pernille Matthews, Lena Krieger, Tommaso Amico, Artur Zimek, Thomas Seidl, Ira Assent</li>
+<li><strong>关键词</strong>：dataset、tabular data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2605.30225v1">http://arxiv.org/abs/2605.30225v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Clustering is an unsupervised technique for grouping data points by similarity. While explainability methods exist for supervised machine learning, they are not directly applicable to clustering, making it challenging to understand cluster assignments. This interpretability gap is particularly evident in the popular density-based method DBSCAN, which assigns points as inliers (cluster members in dense regions) or outliers (noise points in sparse regions). DBSCAN does not provide insight into why a particular point receives its assignment or whether its assignment is robust to small changes in the data. To address the lack of explainability, we introduce ExDBSCAN, a density-aware, post-hoc explanation method. ExDBSCAN offers actionable counterfactual explanations, with theoretical guarantees for validity. It generates multiple counterfactuals using a density connected weighted graph, adopting a physics-inspired model that repels counterfactual candidates from one another (diversity), while pulling them toward the instance to explain (proximity). Empirical evaluation on 30 tabular datasets comparing against four baselines shows that ExDBSCAN outperforms all baselines while attaining perfect validity and retrieving diverse, proximal counterfactuals.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">网页生成时间：2026-06-19 01:55 UTC</div>
+    </article>
+  </div>
+</body>
+</html>

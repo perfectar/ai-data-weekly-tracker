@@ -7,7 +7,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-from update_weekly import Paper, clean_text, infer_chinese_reading
+from update_weekly import Paper, clean_text, format_author_affiliations, infer_chinese_reading
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,6 +42,7 @@ def parse_paper(block: str) -> Paper:
     return Paper(
         title=title,
         authors=authors,
+        author_affiliations=[],
         summary=summary,
         url=field_value(block, "链接"),
         published=published,
@@ -51,11 +52,26 @@ def parse_paper(block: str) -> Paper:
     )
 
 
+def ensure_author_affiliations(block: str) -> tuple[str, bool]:
+    if re.search(r"^- \*\*作者单位\*\*：", block, flags=re.MULTILINE):
+        return block, False
+
+    author_line = re.search(r"^- \*\*作者\*\*：.+$", block, flags=re.MULTILINE)
+    if not author_line:
+        return block, False
+
+    paper = parse_paper(block)
+    affiliation_line = f"\n- **作者单位**：{format_author_affiliations(paper)}"
+    updated = block[: author_line.end()] + affiliation_line + block[author_line.end() :]
+    return updated, True
+
+
 def add_reading_to_block(block: str) -> tuple[str, bool]:
+    block, changed = ensure_author_affiliations(block)
     if READING_HEADING in block:
-        return block, False
+        return block, changed
     if "**数据角度初判**" not in block:
-        return block, False
+        return block, changed
 
     tail = ""
     follow_up_index = block.find("\n## 下周跟进")

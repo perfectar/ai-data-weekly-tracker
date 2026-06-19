@@ -120,6 +120,7 @@
 <li><strong>方向</strong>：数据选择、指令微调、LLM</li>
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.09665">Learning Multi-Indicator Weights for Data Selection: A Joint Task-Model Adaptation Framework with Efficient Proxies</a></li>
 <li><strong>作者</strong>：Jingze Song, Zihao Chen, Wenqing Chen, Zibin Zheng</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>这篇论文直接针对指令微调数据选择：用小型验证集上的 ICL 信号作为低成本代理，学习多个数据质量指标的权重，让选择策略同时适配下游任务和目标模型。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 把“质量、语义多样性、逻辑复杂度”等指标从静态启发式变成可学习权重。 | | 关键结果 | 在 GSM8K 等任务上，用约 30% 训练样本可达到或超过全量数据微调的表现。 | | 跟进价值 | 适合做企业私有数据微调前的样本筛选器，尤其适合标注成本高、任务目标明确的场景。 |</p>
@@ -129,6 +130,7 @@
 <li><strong>方向</strong>：自生成数据、mid-training、RL</li>
 <li><strong>论文</strong>：<a href="https://papers.cool/arxiv/2605.08472">论文索引页</a> / <a href="https://arxiv.org/abs/2605.08472">arXiv</a></li>
 <li><strong>作者</strong>：Aswin RRV, Jacob Dineen, Divij Handa, Mihir Parmar, Ben Zhou, Swaroop Mishra, Chitta Baral</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>论文研究在强化学习前加入一段由模型自生成、多解法、多思路的数据中间训练。它的核心观点是，RL 的收益依赖前置数据是否覆盖多样的问题求解路径。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 使用以 Polya 解题思路为指导的 bootstrapped 数据生成框架，生成同一问题的多个正确解法变体。 | | 关键结果 | 初始化于该类 mid-training 数据的 RL 模型，在数学推理、代码生成和叙事推理等 OOD 任务上更稳定。 | | 跟进价值 | 提示我们不要只看 RL 奖励函数，也要设计 RL 之前的数据多样性和推理路径覆盖。 |</p>
@@ -138,6 +140,7 @@
 <li><strong>方向</strong>：表格数据、基础模型、DLM</li>
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.06290">Data Language Models: A New Foundation Model Class for Tabular Data</a></li>
 <li><strong>作者</strong>：Eda Erol, Giuliano Pezzoli, Ozer Cem Kelahmet</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>这篇论文提出 Data Language Model，并发布 Schema-1，目标是让模型原生理解表格数据，而不是把表格序列化后交给语言模型处理。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | Schema-1 训练于超过 230 万个合成和真实世界表格数据集。 | | 关键结果 | 在行级预测、缺失值重构和数据集行业分类上，对比梯度提升树、AutoML 和部分表格基础模型有优势。 | | 跟进价值 | 如果结果可复现，表格 AI 的重心可能从特征工程和预处理迁移到表格原生预训练。 |</p>
@@ -148,6 +151,7 @@
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.05758">BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models</a></li>
 <li><strong>数据集</strong>：<a href="https://huggingface.co/datasets/gxx27/BioTool">Hugging Face: gxx27/BioTool</a></li>
 <li><strong>作者</strong>：Xin Gao, Ruiyi Zhang, Meixi Du, Peijia Qin, Pengtao Xie</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>BioTool 针对生物医学工具调用构建微调数据，覆盖 NCBI、Ensembl、UniProt 等数据库中的常用工具，目标是减少生物医学问答中的幻觉和工具使用错误。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 包含 34 个常用工具和 7,040 个人工验证的 query-API call 对，覆盖变异、基因组学、蛋白质组学、进化和一般生物学。 | | 关键结果 | 微调 4B LLM 后，生物医学工具调用性能显著提升；论文还给出专家评估。 | | 跟进价值 | 是垂直领域 agent 数据构建的好样本：工具 schema、真实 API、过滤、专家审核、训练和评估闭环完整。 |</p>
@@ -157,6 +161,7 @@
 <li><strong>方向</strong>：标注稀缺、PII、合成数据</li>
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.06305">Addressing Labelled Data Scarcity: Taxonomy-Agnostic Annotation of PII Values in HTTP Traffic using LLMs</a></li>
 <li><strong>作者</strong>：Thomas Cory, Axel Kupper</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>论文研究用 LLM 对 HTTP 请求体中显式传输的 PII 值进行分类和抽取，并支持运行时传入不同的 PII taxonomy。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 提出多阶段 LLM 标注管线，并用 LLM 生成带人工验证 PII 标注的合成 HTTP 流量，避免依赖敏感真实用户抓包。 | | 关键结果 | 在三个不同粒度的 PII taxonomy 上，管线能较准确地识别类型并抽取具体值。 | | 跟进价值 | 适合关注隐私审计、合规数据标注和动态 taxonomy 的团队复用。 |</p>
@@ -166,6 +171,7 @@
 <li><strong>方向</strong>：偏见数据集、多语言、评估管线</li>
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.10442">StereoTales: A Multilingual Framework for Open-Ended Stereotype Discovery in LLMs</a></li>
 <li><strong>作者</strong>：Pierre Le Jeune, Etienne Duchesne, Weixuan Xiao, Stefano Palminteri, Bazire Houssin, Benoit Malezieux, Matteo Dora</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>StereoTales 面向开放式生成中的社会刻板印象发现，解决现有偏见基准过于英语中心、模板化、预定义标签受限的问题。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 覆盖 10 种语言、79 个社会人口属性、23 个近期 LLM 生成的 65 万余篇故事，并按 19 个维度标注主人公画像。 | | 关键结果 | 识别 1,500 多个过度关联，并通过 247 名人类评审和 LLM 评审评估伤害性。 | | 跟进价值 | 适合做多语言安全评估和文化语境偏见分析，尤其能补足英语模板基准的盲区。 |</p>
@@ -175,6 +181,7 @@
 <li><strong>方向</strong>：语音数据、多语言、ASR</li>
 <li><strong>论文</strong>：<a href="https://arxiv.org/abs/2605.09167">WorldSpeech: A 65k-hour Multilingual Speech Corpus for ASR</a></li>
 <li><strong>作者</strong>：Antonis Asonitis, Luca A. Lanzendorfer, Frederic Berdoz, Roger Wattenhofer</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>WorldSpeech 聚焦低资源语言 ASR 数据不足问题，构建大规模多语言对齐音频-文本数据集。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 包含约 6.5 万小时、76 种语言、24 kHz 对齐音频-转写数据，来源包括议会记录、国际广播和公版有声书。 | | 关键结果 | 微调现有 ASR 模型后，在 11 种语言上平均相对词错误率下降 63.5%。 | | 跟进价值 | 说明“数据覆盖和对齐质量”仍是低资源语音模型性能跃迁的主要瓶颈。 |</p>
@@ -184,6 +191,7 @@
 <li><strong>方向</strong>：数据质量、指令数据、统计分析</li>
 <li><strong>论文</strong>：<a href="https://clawrxiv.io/abs/2604.01804">Curation Orthogonality in Instruction-Tuning Data</a></li>
 <li><strong>作者</strong>：Seil Kang, Woojung Han, Claw, Claude Code</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
 </ul>
 <p>这篇预印本分析指令微调数据中的质量维度是否会选出同一批样本。结论是许多质量维度近似独立，单一综合分数会掩盖实际取舍。</p>
 <p>| 维度 | 摘要 | | --- | --- | | 数据角度 | 在 Alpaca 和 WizardLM 上计算准确性、相关性、简洁性、多样性和信息密度等维度。 | | 关键结果 | 多样性和信息密度维度的 top-30% 子集 Jaccard 仅约 0.154；目标维度不同，选出的数据差异很大。 | | 跟进价值 | 支持为数据集发布多维质量元数据，而不是只发布一个总质量分。 |</p>
@@ -203,7 +211,7 @@
 </ul>
 <h2>来源清单</h2>
 <p>| 日期 | 论文 | 方向 | 链接 | | --- | --- | --- | --- | | 2026-05-10 | Learning Multi-Indicator Weights for Data Selection | 数据选择、指令微调 | <a href="https://arxiv.org/abs/2605.09665">arXiv</a> | | 2026-05-08 | Mid-Training with Self-Generated Data Improves Reinforcement Learning in Language Models | 自生成数据、RL | <a href="https://papers.cool/arxiv/2605.08472">论文索引</a> / <a href="https://arxiv.org/abs/2605.08472">arXiv</a> | | 2026-05-07 | Data Language Models | 表格数据、基础模型 | <a href="https://arxiv.org/abs/2605.06290">arXiv</a> | | 2026-05-07 | BioTool | 生物医学工具调用数据 | <a href="https://arxiv.org/abs/2605.05758">arXiv</a> / <a href="https://huggingface.co/datasets/gxx27/BioTool">Dataset</a> | | 2026-05-07 | Addressing Labelled Data Scarcity | PII 标注、合成数据 | <a href="https://arxiv.org/abs/2605.06305">arXiv</a> | | 2026-05-12 | StereoTales | 多语言偏见数据集 | <a href="https://arxiv.org/abs/2605.10442">arXiv</a> | | 2026-05-12 | WorldSpeech | 多语言语音语料 | <a href="https://arxiv.org/abs/2605.09167">arXiv</a> | | 2026-04-19 | Curation Orthogonality in Instruction-Tuning Data | 数据质量、指令微调 | <a href="https://clawrxiv.io/abs/2604.01804">ClawRxiv</a> | | 2026-04-12 | Tracing the Roots | 数据血缘、污染检查 | <a href="https://arxiv.org/abs/2604.10480">arXiv</a> | | 2026-04-09 | Influence-Based Pretraining Data Selection for Code LLMs | 代码预训练数据选择 | <a href="https://arxiv.org/abs/2604.07769">arXiv</a> |</p>
-      <div class="generated">Markdown 更新时间：2026-05-17 13:52 UTC</div>
+      <div class="generated">Markdown 更新时间：2026-06-19 02:11 UTC</div>
     </article>
   </div>
 </body>

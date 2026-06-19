@@ -67,6 +67,7 @@ https://perfectar.github.io/ai-data-weekly-tracker/
 ## 说明
 
 - 自动抓取来源：arXiv API。
+- 作者单位来源：优先使用 arXiv affiliation 元数据；arXiv 未提供时，按标题从 OpenAlex 补充机构信息；仍查不到则明确标注为未提供。
 - 检索范围：`cs.AI`、`cs.CL`、`cs.LG`、`cs.CV`、`stat.ML`。
 - 过滤逻辑：根据数据选择、数据质量、合成数据、数据治理、数据集、标注、隐私、多模态语料等关键词打分。
 - 每周文件名使用 ISO 周格式，例如 `weekly/2026-W20.md` 和 `weekly/2026-W20.html`。

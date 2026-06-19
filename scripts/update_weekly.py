@@ -4,9 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import html
 import json
+import os
 import re
+import socket
 import sys
 import textwrap
 import time
@@ -24,6 +27,7 @@ DATA_DIR = ROOT / "data"
 WEEKS_JSON = DATA_DIR / "weeks.json"
 
 ARXIV_API = "https://export.arxiv.org/api/query"
+OPENALEX_API = "https://api.openalex.org/works"
 ARXIV_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
 CATEGORY_QUERY = "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.CV OR cat:stat.ML)"
@@ -72,6 +76,7 @@ TREND_RULES = {
 class Paper:
     title: str
     authors: list[str]
+    author_affiliations: list[str]
     summary: str
     url: str
     published: date
@@ -123,11 +128,16 @@ def fetch_arxiv(max_results: int = 200, retries: int = 3) -> list[Paper]:
                 if not title or not summary or not published_raw:
                     continue
 
-                authors = [
-                    clean_text(node.findtext("atom:name", default="", namespaces=ARXIV_NS))
-                    for node in entry.findall("atom:author", ARXIV_NS)
-                ]
-                authors = [author for author in authors if author]
+                authors: list[str] = []
+                author_affiliations: list[str] = []
+                for node in entry.findall("atom:author", ARXIV_NS):
+                    author = clean_text(node.findtext("atom:name", default="", namespaces=ARXIV_NS))
+                    if not author:
+                        continue
+                    authors.append(author)
+                    author_affiliations.append(
+                        clean_text(node.findtext("arxiv:affiliation", default="", namespaces=ARXIV_NS))
+                    )
 
                 arxiv_id = clean_text(entry.findtext("atom:id", default="", namespaces=ARXIV_NS))
                 primary_category = entry.find("arxiv:primary_category", ARXIV_NS)
@@ -138,6 +148,7 @@ def fetch_arxiv(max_results: int = 200, retries: int = 3) -> list[Paper]:
                     Paper(
                         title=title,
                         authors=authors,
+                        author_affiliations=author_affiliations,
                         summary=summary,
                         url=arxiv_id,
                         published=parse_arxiv_date(published_raw),
@@ -152,6 +163,73 @@ def fetch_arxiv(max_results: int = 200, retries: int = 3) -> list[Paper]:
             time.sleep(2 + attempt * 2)
 
     raise RuntimeError(f"Failed to fetch arXiv feed: {last_error}")
+
+
+def normalize_title(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+
+
+def fetch_openalex_work(title: str, retries: int = 1, timeout: int = 8) -> dict | None:
+    params = {"search": title, "per-page": 1}
+    mailto = os.environ.get("OPENALEX_MAILTO", "").strip()
+    if mailto:
+        params["mailto"] = mailto
+    url = f"{OPENALEX_API}?{urllib.parse.urlencode(params)}"
+    request = urllib.request.Request(url, headers={"User-Agent": "ai-data-weekly-tracker/1.0"})
+
+    for attempt in range(retries):
+        previous_timeout = socket.getdefaulttimeout()
+        socket.setdefaulttimeout(timeout)
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            results = payload.get("results", [])
+            if not results:
+                return None
+            work = results[0]
+            result_title = work.get("title") or work.get("display_name") or ""
+            similarity = difflib.SequenceMatcher(None, normalize_title(title), normalize_title(result_title)).ratio()
+            return work if similarity >= 0.82 else None
+        except Exception:
+            time.sleep(1 + attempt)
+        finally:
+            socket.setdefaulttimeout(previous_timeout)
+    return None
+
+
+def openalex_affiliation_from_authorship(authorship: dict) -> str:
+    raw_affiliations = [
+        clean_text(value)
+        for value in authorship.get("raw_affiliation_strings", [])
+        if clean_text(value)
+    ]
+    if raw_affiliations:
+        return "；".join(dict.fromkeys(raw_affiliations))
+
+    institutions = [
+        clean_text(institution.get("display_name", ""))
+        for institution in authorship.get("institutions", [])
+        if clean_text(institution.get("display_name", ""))
+    ]
+    return "；".join(dict.fromkeys(institutions))
+
+
+def augment_affiliations_from_openalex(papers: list[Paper]) -> None:
+    for paper in papers:
+        if any(affiliation.strip() for affiliation in paper.author_affiliations):
+            continue
+        work = fetch_openalex_work(paper.title)
+        if not work:
+            continue
+
+        affiliations = [
+            openalex_affiliation_from_authorship(authorship)
+            for authorship in work.get("authorships", [])
+        ]
+        affiliations = affiliations[: len(paper.authors)]
+        if any(affiliation.strip() for affiliation in affiliations):
+            paper.author_affiliations = affiliations
+        time.sleep(0.1)
 
 
 def filter_weekly(papers: list[Paper], start_date: date, end_date: date) -> list[Paper]:
@@ -252,6 +330,7 @@ def render_markdown(papers: list[Paper], start_date: date, end_date: date) -> st
                 f"- **日期**：{paper.published.isoformat()}",
                 f"- **类别**：{paper.category or 'N/A'}",
                 f"- **作者**：{authors or 'N/A'}",
+                f"- **作者单位**：{format_author_affiliations(paper)}",
                 f"- **关键词**：{keyword_text or 'N/A'}",
                 f"- **链接**：[{paper.url}]({paper.url})",
                 "",
@@ -295,6 +374,23 @@ def infer_data_angle(paper: Paper) -> str:
     if has_any(haystack, ["annotation", "labelled data", "labeled data", "pii", "privacy"]):
         return "这篇更偏向标注、隐私或安全数据，值得关注 taxonomy 设计、标注一致性和敏感数据处理边界。"
     return "这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。"
+
+
+def format_author_affiliations(paper: Paper) -> str:
+    pairs = [
+        (author, paper.author_affiliations[index].strip())
+        for index, author in enumerate(paper.authors)
+        if index < len(paper.author_affiliations) and paper.author_affiliations[index].strip()
+    ]
+    if not pairs:
+        return "arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。"
+
+    shown = "；".join(f"{author}（{affiliation}）" for author, affiliation in pairs[:6])
+    if len(pairs) < len(paper.authors):
+        shown += "；其余作者 arXiv 未提供单位"
+    elif len(pairs) > 6:
+        shown += "；等"
+    return shown
 
 
 def infer_research_logic(paper: Paper) -> str:
@@ -397,6 +493,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--end-date", help="End date in YYYY-MM-DD. Defaults to today UTC.")
     parser.add_argument("--days", type=int, default=7, help="Number of days in the weekly window.")
     parser.add_argument("--max-results", type=int, default=250, help="Number of recent arXiv entries to fetch.")
+    parser.add_argument(
+        "--no-affiliation-lookup",
+        action="store_true",
+        help="Skip OpenAlex affiliation lookup and only use arXiv metadata.",
+    )
     return parser.parse_args()
 
 
@@ -410,6 +511,8 @@ def main() -> int:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     papers = filter_weekly(fetch_arxiv(max_results=args.max_results), start_date, end_date)
+    if not args.no_affiliation_lookup:
+        augment_affiliations_from_openalex(papers)
     markdown = render_markdown(papers, start_date, end_date)
     (WEEKLY_DIR / f"{week_label}.md").write_text(markdown, encoding="utf-8")
     update_weeks_index(week_label, start_date, end_date, papers)

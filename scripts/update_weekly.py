@@ -187,6 +187,10 @@ def wrap_summary(summary: str, width: int = 88) -> str:
     return "\n".join(textwrap.wrap(escaped, width=width))
 
 
+def has_any(text: str, terms: list[str]) -> bool:
+    return any(term in text for term in terms)
+
+
 def make_week_label(end_date: date) -> str:
     iso_year, iso_week, _ = end_date.isocalendar()
     return f"{iso_year}-W{iso_week:02d}"
@@ -259,6 +263,10 @@ def render_markdown(papers: list[Paper], start_date: date, end_date: date) -> st
                 "",
                 infer_data_angle(paper),
                 "",
+                "**中文解读与航空 AI 数据启示**",
+                "",
+                infer_chinese_reading(paper),
+                "",
             ]
         )
 
@@ -278,15 +286,85 @@ def render_markdown(papers: list[Paper], start_date: date, end_date: date) -> st
 
 def infer_data_angle(paper: Paper) -> str:
     haystack = f"{paper.title}\n{paper.summary}".lower()
-    if any(term in haystack for term in ["data selection", "data filtering", "data mixture"]):
+    if has_any(haystack, ["data selection", "data filtering", "data mixture"]):
         return "这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。"
-    if any(term in haystack for term in ["synthetic data", "generated data", "self-generated"]):
+    if has_any(haystack, ["synthetic data", "generated data", "self-generated"]):
         return "这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。"
-    if any(term in haystack for term in ["dataset", "benchmark", "corpus"]):
+    if has_any(haystack, ["dataset", "benchmark", "corpus"]):
         return "这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。"
-    if any(term in haystack for term in ["annotation", "labelled data", "labeled data", "pii", "privacy"]):
+    if has_any(haystack, ["annotation", "labelled data", "labeled data", "pii", "privacy"]):
         return "这篇更偏向标注、隐私或安全数据，值得关注 taxonomy 设计、标注一致性和敏感数据处理边界。"
     return "这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。"
+
+
+def infer_research_logic(paper: Paper) -> str:
+    haystack = f"{paper.title}\n{paper.summary}".lower()
+    if has_any(haystack, ["retrieval", "rag", "question answering", "long-context", "extraction"]):
+        return "论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。"
+    if has_any(haystack, ["data selection", "data filtering", "data mixture", "curation"]):
+        return "论文的核心逻辑是先定义样本价值信号，再用过滤、配比或质量评估方法组织训练数据，目标是在更少或更干净的数据上获得更稳定的模型效果。"
+    if has_any(haystack, ["synthetic data", "generated data", "self-generated"]):
+        return "论文的核心逻辑是用模型或程序化流程生成补充数据，再通过筛选、验证或评测闭环控制噪声，缓解真实标注数据不足的问题。"
+    if has_any(haystack, ["benchmark", "evaluation", "leaderboard"]):
+        return "论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。"
+    if has_any(haystack, ["dataset", "corpus", "annotation", "labelled data", "labeled data"]):
+        return "论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。"
+    if has_any(haystack, ["privacy", "pii", "contamination", "bias", "safety"]):
+        return "论文的核心逻辑是识别数据使用中的隐私、污染、偏差或安全风险，并通过检测、约束或评估机制降低模型训练和部署的不确定性。"
+    if has_any(haystack, ["multimodal", "image", "video", "vision", "audio", "speech", "tabular"]):
+        return "论文的核心逻辑是把文本之外的图像、视频、语音或表格数据组织成可训练/可评测样本，使模型能够处理更接近真实业务流程的多源信息。"
+    return "论文的核心逻辑是围绕一个具体 AI 任务梳理数据、模型与评测之间的关系，值得重点看其数据定义、实验设置和误差分析是否可迁移。"
+
+
+def infer_research_highlight(paper: Paper) -> str:
+    haystack = f"{paper.title}\n{paper.summary}".lower()
+    highlights: list[str] = []
+    if has_any(haystack, ["low-resource", "low resources", "scarcity", "rare"]):
+        highlights.append("低资源或稀缺场景下的数据构建思路")
+    if has_any(haystack, ["synthetic data", "generated data", "self-generated"]):
+        highlights.append("合成数据与质量控制闭环")
+    if has_any(haystack, ["benchmark", "evaluation"]):
+        highlights.append("可复现的评测任务和指标设计")
+    if has_any(haystack, ["retrieval", "rag", "grounded", "long-context", "extraction"]):
+        highlights.append("基于证据的检索、长上下文或抽取能力")
+    if has_any(haystack, ["annotation", "taxonomy", "label"]):
+        highlights.append("标注体系和标签定义")
+    if has_any(haystack, ["privacy", "pii", "contamination", "bias", "safety"]):
+        highlights.append("数据安全、隐私或污染控制")
+    if has_any(haystack, ["multimodal", "image", "video", "audio", "speech", "tabular"]):
+        highlights.append("多模态或结构化数据组织方式")
+    if not highlights:
+        highlights.append("任务数据化、评测标准化和误差分析方法")
+    return "亮点在于：" + "；".join(highlights[:3]) + "。"
+
+
+def infer_aviation_reference(paper: Paper) -> str:
+    haystack = f"{paper.title}\n{paper.summary}".lower()
+    if has_any(haystack, ["retrieval", "rag", "question answering", "long-context", "extraction"]):
+        return "对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。"
+    if has_any(haystack, ["synthetic data", "generated data", "self-generated"]):
+        return "对航空 AI 数据的借鉴是：可用合成数据补足小概率故障、极端天气、复杂机场场景和罕见告警样本，但必须配套专家审核、仿真一致性检查和风险分级过滤。"
+    if has_any(haystack, ["data selection", "data filtering", "data mixture", "curation"]):
+        return "对航空 AI 数据的借鉴是：可建立飞行阶段、机型、机场、气象、故障类型和传感器质量等维度的样本选择规则，避免训练集被高频普通航段淹没。"
+    if has_any(haystack, ["benchmark", "evaluation", "leaderboard"]):
+        return "对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。"
+    if has_any(haystack, ["annotation", "labelled data", "labeled data", "taxonomy", "corpus", "dataset"]):
+        return "对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。"
+    if has_any(haystack, ["privacy", "pii", "contamination", "bias", "safety"]):
+        return "对航空 AI 数据的借鉴是：可把航司、旅客、机组和运行安全相关字段纳入脱敏、权限、污染检测和偏差审计流程，降低数据进入模型后的合规与安全风险。"
+    if has_any(haystack, ["multimodal", "image", "video", "vision", "audio", "speech", "tabular"]):
+        return "对航空 AI 数据的借鉴是：可把机载参数、维修图片、机场视频、语音通话、气象报文和运行表格对齐到同一事件时间线，支持多模态诊断和态势理解。"
+    return "对航空 AI 数据的借鉴是：优先复用其数据定义、样本组织和评测方式，并映射到航空中的安全事件、运行效率、维修保障和知识问答场景。"
+
+
+def infer_chinese_reading(paper: Paper) -> str:
+    return "\n".join(
+        [
+            f"- **核心逻辑**：{infer_research_logic(paper)}",
+            f"- **主要亮点**：{infer_research_highlight(paper)}",
+            f"- **航空 AI 数据参考**：{infer_aviation_reference(paper)}",
+        ]
+    )
 
 
 def update_weeks_index(week_label: str, start_date: date, end_date: date, papers: list[Paper]) -> None:

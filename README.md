@@ -70,5 +70,6 @@ https://perfectar.github.io/ai-data-weekly-tracker/
 - 检索范围：`cs.AI`、`cs.CL`、`cs.LG`、`cs.CV`、`stat.ML`。
 - 过滤逻辑：根据数据选择、数据质量、合成数据、数据治理、数据集、标注、隐私、多模态语料等关键词打分。
 - 每周文件名使用 ISO 周格式，例如 `weekly/2026-W20.md` 和 `weekly/2026-W20.html`。
+- 每篇重点论文会生成中文解读，包括核心逻辑、主要亮点，以及对航空 AI 数据建设的参考价值。
 - 邮件通知中的本周周报链接指向 HTML 阅读页，Markdown 仅作为源文件保留。
 - 后续可以把关键词、趋势规则和摘要逻辑继续增强成更强的 agent。

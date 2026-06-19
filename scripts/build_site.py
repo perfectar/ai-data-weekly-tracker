@@ -279,7 +279,7 @@ def extract_title(markdown: str, fallback: str) -> str:
 
 def render_weekly_page(markdown: str, md_path: Path) -> str:
     title = extract_title(markdown, md_path.stem)
-    updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    updated = datetime.fromtimestamp(md_path.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     body = markdown_to_html(markdown)
 
     return f"""<!doctype html>
@@ -382,7 +382,7 @@ def render_weekly_page(markdown: str, md_path: Path) -> str:
     </nav>
     <article>
       {body}
-      <div class="generated">网页生成时间：{esc(updated)}</div>
+      <div class="generated">Markdown 更新时间：{esc(updated)}</div>
     </article>
   </div>
 </body>

@@ -1,5 +1,45 @@
 [
   {
+    "week": "2026-W25",
+    "start": "2026-06-15",
+    "end": "2026-06-21",
+    "paper_count": 20,
+    "top_titles": [
+      "The Significance of Style Diversity in Annotation-Free Synthetic Data Generation",
+      "Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software",
+      "HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 16
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 10
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 4
+      },
+      {
+        "name": "数据治理与血缘",
+        "count": 3
+      },
+      {
+        "name": "数据选择与过滤",
+        "count": 1
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 1
+      }
+    ],
+    "file": "weekly/2026-W25.md",
+    "html_file": "weekly/2026-W25.html",
+    "updated_at": "2026-06-21T02:01:37+00:00"
+  },
+  {
     "week": "2026-W24",
     "start": "2026-06-08",
     "end": "2026-06-14",

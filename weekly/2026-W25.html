@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W25</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W25.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W25</h1>
+<ul>
+<li><strong>周期</strong>：2026-06-15 至 2026-06-21</li>
+<li><strong>生成时间</strong>：2026-06-21 02:01 UTC</li>
+<li><strong>论文数量</strong>：20</li>
+<li><strong>范围</strong>：arXiv cs.AI、cs.CL、cs.LG、cs.CV、stat.ML 中与 AI 数据相关的近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>20</strong> 篇数据相关论文，主要集中在：数据集与基准（16）、标注、隐私与安全数据（10）、合成数据与自生成数据（4）、数据治理与血缘（3）。</p>
+<p>优先关注前三篇：The Significance of Style Diversity in Annotation-Free Synthetic Data Generation；Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software；HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：16 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：10 篇相关论文。</li>
+<li><strong>合成数据与自生成数据</strong>：4 篇相关论文。</li>
+<li><strong>数据治理与血缘</strong>：3 篇相关论文。</li>
+<li><strong>数据选择与过滤</strong>：1 篇相关论文。</li>
+<li><strong>表格、语音与非文本数据</strong>：1 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. The Significance of Style Diversity in Annotation-Free Synthetic Data Generation</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Zahra Abbasiantaeb, Zeno Belligoli, Omar Essam, Mohammad Aliannejadi</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：data quality、dataset、synthetic data、training data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20400v1">http://arxiv.org/abs/2606.20400v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Generating high-utility synthetic data for intent classification typically requires human-annotated seed data, which is often unavailable in fast-paced industrial settings. In this paper, we propose a framework for synthetic dialogue generation that works entirely without human-annotated data, relying solely on intent definitions. Our proposed dialogue generation framework utilizes two different types of topic and style attributes to improve data diversity. Also, we propose two novel post-hoc stylization models called Univ and Exam to transform synthetic LLM-generated utterances into more varied, human-like linguistic styles. To enhance data quality, we utilize an LLM-as-a- judge filtering process. Experimental results on both industrial and public datasets demonstrate that the proposed approach achieves up to 93.3% of the performance obtained using human-annotated training data. Crucially, the findings reveal that style diversity is more critical than topic diversity for synthetic data utility, as it prevents models from learning spurious stylistic correlations. Furthermore, the study shows that incorporating style attributes during the generation process is more effective than post-hoc style adaptation.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是用模型或程序化流程生成补充数据，再通过筛选、验证或评测闭环控制噪声，缓解真实标注数据不足的问题。</li>
+<li><strong>主要亮点</strong>：亮点在于：合成数据与质量控制闭环；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可用合成数据补足小概率故障、极端天气、复杂机场场景和罕见告警样本，但必须配套专家审核、仿真一致性检查和风险分级过滤。</li>
+</ul>
+<h3>2. Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CR</li>
+<li><strong>作者</strong>：Arastoo Zibaeirad, Marco Vieira</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、training data、data contamination</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20502v1">http://arxiv.org/abs/2606.20502v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Whether LLMs scoring well on vulnerability benchmarks genuinely reason about security or merely pattern-match on contaminated data remains unresolved. We present CWE-Trace, a framework for LLM vulnerability detection built from 834 manually curated Linux kernel samples spanning 74 CWEs. The framework enforces a strict temporal split (pre-2025 historical set / post-cutoff leakage-free set), preserves context-aware vulnerable-- patched pairs, and introduces two diagnostic metrics: the Directional Failure Index (DFI) and Hierarchical Distance and Direction (HDD). We evaluate eight vanilla LLMs and 15 LoRA fine-tuned variants across non-targeted detection, targeted detection, and CWE classification. Our analysis yields two key results. First, data contamination provides no measurable advantage. Function-level analysis shows that 84% of nominally contaminated samples carry no usable memorization signal: vulnerable functions are absent or cross-mapped across datasets, and ~31% of contaminated samples carry CWE misclassification. Second, backbone directional priors dominate fine-tuning. Models exhibit stable, systematic failure modes (DFI ranging from -85.5 to +94.8 pp) that persist from historical to post-cutoff data and resist correction. Fine-tuning shifts the output threshold without changing the decision policy. This is calibration without comprehension: output distributions adapt to training data while the underlying security reasoning remains absent. The weakest backbone at binary detection (DeepSeek-R1) gains the most in coarse CWE classification, revealing that detection and understanding are decoupled capabilities. The best detection score reaches only 52.1% (+2.1 pp above chance); exact CWE ranking remains below 1.3% Top-1 accuracy, confirming that current LLMs lack reliable security reasoning for systems software, regardless of fine-tuning strategy.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>3. HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Juncheng Ma, Jianxin Bi, Yufan Deng, Xuanran Zhai, Kewei Zhang, Ye Huang, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：data quality、training data、pretraining data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20521v1">http://arxiv.org/abs/2606.20521v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Embodied foundation models are expected to benefit from data scaling like large language models, but face a much tighter data bottleneck. Teleoperated real-robot trajectories remain the dominant pretraining source due to their precise action supervision and embodiment alignment, yet their scalability is limited by high collection cost, acquisition difficulty, and low behavioral and environmental diversity. These limitations have sparked interest in egocentric human video as a scalable, substantially lower-cost, and more diverse alternative for embodied model pretraining. However, its effectiveness compared to teleoperated real-robot data remains underexplored. To address this question, we conduct a systematic study comparing egocentric human video and teleoperated real-robot trajectories as pretraining data sources for embodied foundation models, under fixed post-training and validation protocols. Surprisingly, we find that egocentric data, when processed through a carefully designed filtering and labeling pipeline, is not merely a viable substitute for model pretraining but can lead to superior performance. With the same amount of pretraining data, models pretrained on egocentric data achieve a 24% lower validation loss on real-robot action prediction, as well as 52.5% and 90% higher success rates on in-distribution and out-of-distribution real-robot task execution, respectively. This finding verifies a scalable paradigm for embodied foundation models: pretrain on egocentric human video to learn diverse world representations, then adapt with a small amount of labeled real-robot data for action- space alignment. We hope this study encourages broader exploration of egocentric data and offers guidance for data quality assessment before costly robot data collection.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>4. The Register Gap: A Meaning Intelligence Framework for Nigerian Public Discourse</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Celestine Achi</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20255v1">http://arxiv.org/abs/2606.20255v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>We introduce the Meaning Intelligence Framework (MIF), a nine-dimension annotation and evaluation schema for Nigerian public discourse that separates surface sentiment from true communicative intent. Existing benchmarks for Nigerian languages, including NaijaSenti and AfriSenti, treat sentiment classification as a three-way polarity task (positive, negative, neutral). We argue that the dominant failure mode of AI systems on Nigerian discourse is not translation failure but context failure: the same utterance carries opposite pragmatic force depending on speaker, audience, and situation. The MIF operationalises this insight across nine scored dimensions: register, surface sentiment, true intent, irony, coded subtext, risk tier, annotator confidence, speaker emotion, and recommended communications action. We construct a 30-item calibration dataset spanning Standard English, Nigerian English, Nigerian Pidgin, and code-mixed registers, and evaluate a frontier language model (Gemini 2.5 Flash) under zero-shot and schema- informed prompting conditions. The headline finding is the Register Gap: zero-shot register classification accuracy is 33.3%, rising to 73.3% (+40 points) when the model receives the MIF schema in-context. The composite Meaning Intelligence Score increases by 5.4 points (73.2 to 78.6) under schema-informed prompting, with the largest practical gains in register identification, coded-subtext detection (+10 points), and strategic action recommendation (+10.3 points). We release the framework specification, annotation guidelines, and the 30-item public calibration set to support reproducibility, while retaining a private holdout corpus for contamination-protected evaluation.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>5. NAMESAKES: Probing Identity Memorization in Text-to-Image Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Morris Alper, Vasudha Varadarajan, Moran Yanuka, Angelina Wang, Hadar Averbuch-Elor</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、training data、privacy</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20155v1">http://arxiv.org/abs/2606.20155v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Text-to-image (T2I) models generate realistic likenesses of some individuals when prompted with their names, raising privacy concerns. However, distinguishing whether a generated face is memorized or fabricated currently requires ground-truth photos, access to training data, or white-box access to model internals, limiting applicability. We introduce a fully black-box behavioral probe that distinguishes between these regimes while requiring no reference photos or prior knowledge of training data. To benchmark this task, we present the NAMESAKES dataset of over one thousand names and faces of public figures spanning a wide range of fame levels, along with perturbed, less famous names. Experiments on state-of-the-art T2I models show that our probe substantially predicts identity memorization and separates memorized from unrecognized names, with further insights into differences across model families.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>6. Data Bias Mitigation under Coverage Constraints &amp; The Price of Fairness</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Bruno Scarone, Alfredo Viola, Renée J. Miller</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、training data、data governance</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20461v1">http://arxiv.org/abs/2606.20461v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Machine learning models have been shown to exhibit discriminatory outcomes or degraded performance for individuals at the intersection of multiple sensitive attributes, such as race and gender. This stems in part from two interrelated challenges: the lack of principled measures for quantifying bias (potentially intersectional), and insufficient representation of intersectional subgroups in training data. We extend a recent bias mitigation framework to incorporate coverage constraints that enforce sufficient representation across groups, including intersectional subgroups. Since achieving exactly zero bias for all groups may not be data efficient (meaning it may require large amounts of data), our solution trades small approximation errors in bias for greater data efficiency while satisfying coverage constraints. We also formulate bias mitigation as an integer linear program that optimizes over all mitigation strategies, and characterize the price of fairness, the minimum data modification cost, as a function of fairness tolerance. This is essential both for legal compliance, where regulations may mandate specific fairness thresholds, and for data governance, enabling practitioners to make informed trade-offs between bias reduction and data modification (particularly, data purchasing) costs. We evaluate our techniques on publicly available datasets, demonstrating that bias mitigation via our framework preserves predictive accuracy across multiple classifiers, and that coverage constraints, while motivated by statistical considerations, are essential for preserving downstream ML performance.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>7. Distill Once, Adapt Life-Long: Exploring Dataset Distillation for Continual Test-Time Adaptation</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Hyun-Kurl Jang, Jihun Kim, Hyeokjun Kweon, Kuk-Jin Yoon</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、labeled data、privacy</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20196v1">http://arxiv.org/abs/2606.20196v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Continual Test-Time Adaptation (CTTA) aims to maintain model performance under evolving target domains by adapting online without labeled data. However, practical deployments often cannot retain the source dataset due to privacy or licensing constraints, and purely source-free CTTA methods tend to become unstable under long-term distribution shift, suffering from compounding self-training errors and catastrophic forgetting. We introduce DO-ALL (Distill Once, Adapt Life-Long), a plug-and-play framework that revisits source information in a compact and privacy-conscious form via Dataset Distillation (DD). Before deployment, DO-ALL performs DD to produce a small set of synthetic distilled anchors that summarize the source distribution. During adaptation, each target sample is matched with its most semantically aligned anchor, which provides a stable reference for various CTTA via source replay, representation alignment, and manifold-smoothing regularization. DO-ALL can be seamlessly integrated into existing CTTA algorithms, consistently improving long-term robustness across CIFAR100-C, ImageNet-C, and the CCC benchmark. This demonstrates the potential of leveraging DD to enable stable and continuous adaptation without retaining raw source data. The code is available at https://github.com/blue-531/DOALL.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>8. CATCH-ME if you RAG: a dataset of Contextually Annotated multi-Turn Counterspeech against Hate and Misinformation Exchanges</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Helena Bonaldi, Genoveffa Martone, Marco Guerini</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation、multilingual data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20369v1">http://arxiv.org/abs/2606.20369v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Online hate speech and misinformation frequently overlap, yet NLP research has mainly treated them in isolation. While LLMs represent a scalable solution for assisting humans in the generation of counterspeech for both threats, zero-shot models frequently generate repetitive and vague responses, underscoring the need for high-quality examples to steer model generation. However, existing counterspeech datasets against the overlap of hate and misinformation are scarce and limited to single-turn English dialogues, while real-life interactions span across multiple turns and languages. To bridge this gap, we introduce the first large-scale, expert-curated, multilingual dataset of dialogues tackling the intersection of hate and misinformation. To ensure factual grounding, the dialogues are also anchored in verified external knowledge (i.e., fact- checking articles and NGO reports) and include document- and chunk-level span annotations, making it directly applicable for RAG systems. Covering five languages and targeting hate directed at seven marginalized groups, this novel resource enables the training and evaluation of more persuasive, factually grounded counterspeech models.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>9. Beyond Accuracy: Measuring Logical Compliance of Predictive Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Guillaume Olivier Delplanque, Pierre Genevès, Nabil Layaïda, Zephirin Faure</li>
+<li><strong>作者单位</strong>：Guillaume Olivier Delplanque（LIG）；Pierre Genevès（LIG）；Nabil Layaïda（LIG,TYREX）；其余作者 arXiv 未提供单位</li>
+<li><strong>关键词</strong>：dataset、benchmark、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20208v1">http://arxiv.org/abs/2606.20208v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Machine learning models are predominantly evaluated through predictive performance metrics such as ranking quality, prediction error, or classification accuracy. While these metrics effectively quantify how closely predictions match the ground truth, they do not assess whether model outputs respect predefined logical or domain-specific constraints. In high-stakes applications, including healthcare, finance, and autonomous systems, logical consistency can be as critical as predictive accuracy, yet no standard metric captures this dimension. We introduce the Rule Violation Score (RVS), a complementary evaluation metric that quantifies the extent to which a predictive model respects a given set of logical rules, independently of predictive accuracy. RVS treats hard rules (strict constraints) and soft rules (statistical regularities) differently, can be evaluated on any dataset and on any predictive model expressed over a relational vocabulary, and can be computed using SQL queries that are automatically generated for Horn rules. Beyond evaluating models, RVS can also evaluate the logical consistency of training datasets and help identify poorly defined rules. We evaluate RVS on three benchmarks covering knowledge graph link prediction and relational regression, including rule-based, embedding-based, and neuro-symbolic predictive models. Our results demonstrate that two models achieving comparable predictive accuracy can exhibit substantially different levels of logical compliance, revealing differences in model behavior that standard metrics fail to capture.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>10. Evaluation of EEG Foundation Models for Event-Based Burst-Suppression Detection in ICU</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：eess.SP</li>
+<li><strong>作者</strong>：Elisa Vasta, Thorir Mar Ingolfsson, Andrea Cossettini, Luca Benini, Tilman Beck, Emanuela Keller, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20074v1">http://arxiv.org/abs/2606.20074v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Burst suppression (BS) is a clinically relevant electroencephalographic (EEG) pattern used to monitor sedation depth and brain activity in critically ill patients, particularly during induced coma in Intensive Care Units (ICUs). Automatic burst detection remains challenging because BS patterns vary substantially between patients and annotated datasets are scarce. Recently, EEG Foundation Models (FMs) have shown promise across several downstream EEG applications, but their usefulness for BS detection remains unexplored. We present the first study to evaluate EEG FMs for burst detection in reduced-montage ICU EEG without patient-specific calibration. We compare REVE-base, LUNA-large and LuMamba-Tiny with an adaptive thresholding baseline and a task-specific EEGNet baseline. Additionally, we complement conventional EEG window-based classification with event-based burst detection evaluation. This helps assessing clinically whether burst episodes are correctly detected, reducing the impact of expected annotation variability. The best model, REVE-base, achieved the highest event- based F1-score ($0.868 \pm 0.167$) and reduced burst-per-minute error by 52.1% and 36.2% compared to EEGNet and adaptive thresholding respectively, supporting FMs for scalable EEG monitoring in ICU. Ablation experiments showed that full fine-tuning was the most effective adaptation strategy with respect to frozen-backbone training, two-step fine- tuning, and LoRA-based adaptation, improving event-based F1-score over frozen-backbone training by up to $+0.102$ for LUNA-large. With reduced labeled datasets, pretrained REVE-base outperformed random initialization by $+0.723$ event-based F1 points at 25% of the cohort, demonstrating the benefit of pretraining FM representations when adapted to burst detection with limited labeled data.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>11. Scalable Training of Spatially Grounded 2D Vision-Language Models for Radiology</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Yusuf Salcan, Simon Ging, Robin Schirrmeister, Philipp Arnold, Elmar Kotter, Behzad Bozorgtabar, et al.</li>
+<li><strong>作者单位</strong>：Yusuf Salcan（Computer Vision Group, University of Freiburg, Germany）；Simon Ging（Computer Vision Group, University of Freiburg, Germany）；Robin Schirrmeister（Department of Radiology, Medical Center -- University of Freiburg, Germany）；Philipp Arnold（Department of Radiology, Medical Center -- University of Freiburg, Germany）；Elmar Kotter（Department of Radiology, Medical Center -- University of Freiburg, Germany）；Behzad Bozorgtabar（Adaptive &amp; Agentic AI）；等</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20477v1">http://arxiv.org/abs/2606.20477v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>We study how to train visually grounded vision-language models (VLMs) for radiology without manual spatial annotations. We introduce RefRad2D, a large-scale bilingual (German/English) dataset of 1.2M CT and MR image-text pairs derived from clinical practice, with task-specific VQA and spatial grounding subsets generated automatically via LLM-based curation and automated segmentation. Trained on this data, our model RadGrounder jointly performs report generation, visual question answering, and spatial grounding via bounding-box detection or segmentation. On external VQA benchmarks (Slake, VQA-RAD), RadGrounder achieves competitive results with specialized medical VLMs. Adding our clinical data to the training mixture improves open-ended VQA over fine-tuning on the downstream datasets alone, showing the transferability of our dataset. Crucially, adding grounding supervision does not degrade language quality, enabling spatially verifiable outputs at no cost to VQA performance.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>12. Speeding up the annotation process in semantic segmentation industrial applications</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Marta Fernandez-Moreno, Margarita Guerrero, Rosalia Rementeria, Pablo Mesejo, Raul Moreno</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.19934v1">http://arxiv.org/abs/2606.19934v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Current machine learning models commonly require large and well-annotated datasets. However, the annotation process often becomes a bottleneck, with increased complexity leading to higher chances of human errors. Within this context, our goal in this paper is to leverage unsupervised algorithms to improve data annotation efficiency for complex semantic segmentation problems in industrial materials science. Previous research has quantified labeling time and others explored unsupervised methods. However, to the best of our knowledge, this is the first study to quantify how much unsupervised algorithms accelerate the labeling process. We aim to validate the extent to which this laborious process can be accelerated, focusing on semantic segmentation tasks that involve annotating each pixel of high-resolution images, such as the microstructure characterization challenge in materials science. Specifically, we demonstrate that by using unsupervised computer vision algorithms, the time required for the labeling process can be reduced from 170 hours to 37 hours, achieving an approximate reduction of 78\%. The dataset we work with includes large images of dimensions 1280x959 and 960x703, which further increases the complexity of the annotation task. Despite these challenges, we create and share the largest public steel microstructure segmentation dataset to date, available under MIT License with permanent DOI, contributing a fully annotated, high-resolution dataset to the field. Additionally, this is the first work to compare the labeling time from scratch (a common approach in previous studies) to the labeling time when using these unsupervised algorithms as a pre-annotation step. Furthermore, we provide a Deep Learning model trained on this dataset, validated by field experts, and deployed in an industrial setting, serving as an initial benchmark for this public dataset.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>13. Efficiently Linking Real Scenes with Synthetic Data Generation for AI-based Cognitive Robotics and Computer Vision Applications</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.RO</li>
+<li><strong>作者</strong>：Paul Koch, Vivek Chavan, André Sers, Adem Karakurt, Paul Hofmann, Mohamad Zaher Ziadeh, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：synthetic data、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20272v1">http://arxiv.org/abs/2606.20272v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>AI vision models are a driving factor for the potential use case scenarios of cognitive robotics within in the industry and household applications. A large array of methods from semantic environment analysis towards 6D and grasping pose estimation have been proposed based on the latest AI achievements. However, such advancements require further strong and efficient methods w.r.t. training data and AI-architectures, which are capable in synergy to tackle current challenges, precision limits, and scalability beyond domain gaps. In this paper, we discuss these current limits and trends in the related state-of-the-art which are challenging those. Further we discuss our current work in progress on bridging the domain gap between simulations and real world applications by linking those in the training data generation.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是用模型或程序化流程生成补充数据，再通过筛选、验证或评测闭环控制噪声，缓解真实标注数据不足的问题。</li>
+<li><strong>主要亮点</strong>：亮点在于：合成数据与质量控制闭环。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可用合成数据补足小概率故障、极端天气、复杂机场场景和罕见告警样本，但必须配套专家审核、仿真一致性检查和风险分级过滤。</li>
+</ul>
+<h3>14. Critical Percolation as a Synthetic Data Model for Interpretability</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Aryeh Brill, Tom Ingebretsen Carlson</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、synthetic data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20347v1">http://arxiv.org/abs/2606.20347v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Neural networks learn features that reflect the hierarchical, multi-scale structure of natural data. Synthetic datasets used to evaluate interpretability methods typically lack this structure, limiting their value as realistic toy models. To close this gap, we introduce a family of synthetic datasets consisting of hierarchical functions defined on critical mean-field percolation clusters embedded in a high-dimensional data space. The percolation data consists of sparse, low-dimensional fractal clusters with a power-law size distribution. Latent variables modeling a taxonomic hierarchy generate each data point&#x27;s target value. The data model is analytically tractable with known critical exponents that fix its properties without requiring hyperparameter tuning. We leverage a mapping between percolation clusters, random trees, and additive coalescence to propose an almost linear-time algorithm to jointly sample a random tree and its hierarchical latent decomposition, enabling data generation at arbitrary scale. Using probing experiments, we find that the model&#x27;s ground-truth latent variables can be linearly decoded from neural network activations. Together, sparsity, self-similarity, power-law statistics, and analytical tractability make critical percolation a principled testbed for interpretability research.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：合成数据与质量控制闭环；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>15. Constrained hybrid modelling to predict microbial dynamics and organic matter turnover in soil systems</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Paul Collart, Juergen Gall, Andrea Schnepf, Holger Pagel, Lars Doorenbos</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20329v1">http://arxiv.org/abs/2606.20329v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Soil microorganisms control organic matter cycling and largely determine how soil systems can cope with and mitigate climate change and environmental threats. Representing microbial dynamics in process-based soil models is therefore critical to predict carbon cycling in soils, albeit highly challenging to inform from data. One promising approach to improve their parametrisation is the integration of genomic data, yet modelling the complex and unknown relationship between genomes and the processes the microbes are driving is an unsolved problem. In this work, we present the first hybrid modeling framework for deriving biokinetic parameter values of a process-based soil organic matter turnover model from metagenome-inferred functional traits based on DNA sequencing data. Our model predicts biokinetic parameters of the process-based model from genomic trait data with a neural network and integrates constraints from ecological theory and literature to ensure realistic behavior, even of non-observed state variables. We evaluate our method on synthetic genomic trait datasets of varying complexity and on real data, showing that our approach improves performance over multiple baselines and learns the dynamics of unmeasurable components of the process- based model effectively, even for small training datasets.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：任务数据化、评测标准化和误差分析方法。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>16. CMDS-AD: Cross-Modal Dual-Stream Decoupling for Few-Shot Anomaly Detection</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Junhao Cai, Deyu Zeng, Junhao Pang, Junyu Chen, Qiwei Liang, Xiaopin Zhong, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：training data、data scarcity</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20300v1">http://arxiv.org/abs/2606.20300v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Few-shot anomaly detection remains challenging due to limited training data. Multi-modal anomaly detection (MAD) offers a viable solution, leveraging 3D geometric cues to enrich 2D RGB representations and compensate for this scarcity. However, existing MAD methods apply spatially uniform feature processing, conflating stable macroscopic structures with high-frequency localized defect signals, exacerbating cross-modal misalignment and inflating false-positive rates. To overcome this, we present CMDS-AD, a Cross-Modal Dual-Stream Anomaly Detection framework. A LoRA-guided diffusion model generates diverse RGB samples to mitigate extreme data scarcity. For 3D normal augmentation, we employ a pre-trained diffusion model as a normal estimator. Crucially, this estimator inherently acts as a non-linear low-pass filter, directly extracting low-frequency normal representations from RGB inputs. This establishes an auxiliary estimated stream of purely low-frequency information, anchoring robust structural templates and assisting the uncompressed real stream, containing coupled high- and low-frequency components, to precisely isolate micro-defects. A Coordinate-Aware Hierarchical Feature Mapper adaptively aligns cross-modal semantics, while a multiplicative scoring mechanism filters modality-specific noise. Under the extreme 1-shot setting, CMDS-AD achieves absolute performance gains of 5.7% (I-AUROC) and 2.0% (AUPRO) on MVTec 3D-AD, alongside 7.7% and 5.6% improvements on EyeCandies, establishing a new state-of-the-art.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>17. Exploring the potential of AlphaEarth and TESSERA embeddings for Fine-scale Local Climate Zone Mapping: A case study across five cities in Switzerland</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Htet Yamin Ko Ko, Clement Atzberger</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：data quality、dataset</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.20034v1">http://arxiv.org/abs/2606.20034v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Understanding urban spatial morphology is critical for climate modeling, risk assessment, and sustainable urban design, and Local Climate Zone (LCZ) mapping provides the basic framework for this. However, many cities still use coarse ~100-m resolution LCZ records, which are unsuitable for fine-scale urban research. In this study, precomputed embeddings from TESSERA (Feng et al., 2025) and AlphaEarth (Brown et al., 2025) are compared to traditional Sentinel-1/2 (S1S2) composites in five Swiss cities to see if they can upscale coarse LCZ maps to 10-m resolution using an attention-based U-Net. Three experiments assess multi-city transferability, the impact of higher- resolution reference data, and temporal robustness to year-to-year phenology changes. We find that all datasets achieve strong performance with test data Intersection-over-Union (IoU) ranging from 0.59-0.69 and 0.77-0.82 in the first two experiments. TESSERA consistently outperforms both S1S2 and AlphaEarth across both settings As expected, we find that the transfer of embedding-based models from one year to another remains an open challenge. Overall, however, our results demonstrate the promising potential of embeddings derived from EO foundation models to reduce time consuming preprocessing, respectively, manual feature engineering tasks and to guide a universal deep learning- based LCZ mapping workflow. When combined with a simple location-aware attention U-Net architecture, the embeddings enhance regional transferability and scalability, supporting the development of comprehensive and reproducible fine-scale LCZ maps for global urban climate applications Improving reference data quality remains the strongest lever for further accuracy gains.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：任务数据化、评测标准化和误差分析方法。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>18. Advancing DialNav through Automatic Embodied Dialog Augmentation</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Leekyeung Han, Sangwon Jung, Hyunji Min, Jinseong Jeong, Minyoung Kim, Paul Hongsuck Seo</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.19948v1">http://arxiv.org/abs/2606.19948v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>For embodied agents capable of physical interaction, the capability to create and understand dialog is crucial to ensure both safety and effectiveness. While DialNav~\cite{han2025dialnav} provides a framework for holistic evaluation of the dialog --execution loop in photorealistic indoor navigation, its performance remains limited by a critical scarcity of training data (2K episodes). To address this, we propose an automatic generation pipeline, and construct the \textbf{RAINbow} dataset, a large-scale training dataset with 238K episodes for DialNav. Our pipeline converts existing VLN datasets into multi-turn dialog and creates cost-efficient and high-quality dataset. Then, we introduce two additional complementary advances to unlock the data&#x27;s full potential: (1) Dual-Strategy Training, a navigation training scheme to align the navigation training with the dynamic dialog-navigation loop, and (2) a localization model that leverages VLN knowledge. By combining these complementary solutions, our model substantially outperforms the baseline in success rate on both \textbf{Val Seen} (58.24, \textbf{+89\%}) and \textbf{Val Unseen} (29.05, \textbf{+100\%}) splits, establishing a new state of the art.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>19. DiffMath: Symbol- and Graph-Aware Latent Diffusion Transformer for Handwritten Mathematical Expression Generation</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Wei Pan, Xuhan Zheng, Yilin Shi, Huiguo He, Hiuyi Cheng, Dezhi Peng, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：synthetic data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.19939v1">http://arxiv.org/abs/2606.19939v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Handwritten Mathematical Expression Generation (HMEG) is challenging due to the complex two-dimensional layouts and long-range structural dependencies of mathematical expressions. Existing methods typically rely on explicit spatial supervision, such as symbol-level bounding boxes, which incurs high annotation costs and limits scalability. In this work, we propose DiffMath, a symbol- and graph-aware latent diffusion framework that leverages the hierarchical structure inherent in LaTeX as a structural prior, eliminating the need for positional supervision. First, we design a Relational Abstract Syntax Tree (RelAST), a generation-oriented representation that distills MathML trees into compact triplet sequences [S, R, D], where each token directly encodes a symbol identity, spatial relation, or nesting depth. Second, we introduce MathVAE, which learns structure-preserving latent representations through symbol-aware and relation-aware perceptual regularization, ensuring that the latent space captures both character semantics and spatial topology. Third, MathDiT performs conditional denoising in this structured latent space, further guided by a global symbol-count prior via Adaptive Layer Normalization (AdaLN) to improve structural coherence. Experiments show that DiffMath produces structurally consistent handwritten expressions, achieves superior performance over existing methods, and improves the accuracy of downstream OCR models through synthetic data augmentation.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：合成数据与质量控制闭环；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>20. eCNNTO: A Highly Generalizable ConvNet for Accelerating Topology Optimization</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-18</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Shengbiao Lu, Xiaodong Wei</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2606.19921v1">http://arxiv.org/abs/2606.19921v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>This work proposes an element-based Convolutional Neural Network (CNN) to accelerate density-based Topology Optimization (TO), termed eCNNTO. TO generally undergoes a large number of iterations, where finite element analysis is performed in every iteration, leading to the efficiency bottleneck especially when dense meshes are used to achieve high-resolution designs. To address this limitation, eCNNTO is proposed to build upon Kallioras et al. (2020), where a Deep Belief Network (DBN) was trained for every element to predict its near-optimal density from its early history, thereby skipping the great majority of iterations and significantly accelerating the TO procedure. However, the method lacks spatial correlations among neighboring elements and may lead to disconnected features in the final structure. The proposed method employs CNN with residual connections to address this issue. On top of it, a novel training strategy is introduced to further enhance the optimization efficiency, where the training dataset consists of the final stage density histories rather than early ones. This change can also help reduce the required training data size. eCNNTO requires only a small dataset to train and yet it can be generalized to problems with largely different boundary conditions, loading cases, design domain geometries, mesh resolutions, as well as non- design domains. In the end, the generalization capabilities and efficiency of eCNNTO are demonstrated through a variety of examples in two and three dimensions, achieving up to 90% and 97% reduction of iterations, respectively.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：任务数据化、评测标准化和误差分析方法。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">Markdown 更新时间：2026-06-21 02:01 UTC</div>
+    </article>
+  </div>
+</body>
+</html>

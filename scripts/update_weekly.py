@@ -31,6 +31,10 @@ OPENALEX_API = "https://api.openalex.org/works"
 ARXIV_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
 CATEGORY_QUERY = "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.CV OR cat:stat.ML)"
+OPENALEX_FALLBACK_QUERY = (
+    "large language model dataset benchmark synthetic data data selection "
+    "data curation data quality training data pretraining data annotation privacy multimodal"
+)
 
 KEYWORDS = {
     "data selection": 5,
@@ -104,6 +108,25 @@ def score_paper(title: str, summary: str) -> tuple[int, list[str]]:
     return score, matches
 
 
+def score_openalex_work(title: str, summary: str, topics: list[str]) -> tuple[int, list[str]]:
+    score, matches = score_paper(title, f"{summary}\n{' '.join(topics)}")
+    haystack = f"{title}\n{summary}\n{' '.join(topics)}".lower()
+    ai_terms = [
+        "artificial intelligence",
+        "large language model",
+        "llm",
+        "machine learning",
+        "deep learning",
+        "computer vision",
+        "natural language processing",
+        "multimodal",
+        "generative ai",
+    ]
+    if has_any(haystack, ai_terms):
+        score += 4
+    return score, matches
+
+
 def fetch_arxiv(max_results: int = 200, retries: int = 3) -> list[Paper]:
     params = {
         "search_query": CATEGORY_QUERY,
@@ -163,6 +186,107 @@ def fetch_arxiv(max_results: int = 200, retries: int = 3) -> list[Paper]:
             time.sleep(2 + attempt * 2)
 
     raise RuntimeError(f"Failed to fetch arXiv feed: {last_error}")
+
+
+def abstract_from_openalex(work: dict) -> str:
+    inverted = work.get("abstract_inverted_index") or {}
+    if not inverted:
+        return clean_text(work.get("title") or "")
+
+    positioned_words: list[tuple[int, str]] = []
+    for word, positions in inverted.items():
+        for position in positions:
+            positioned_words.append((int(position), word))
+    positioned_words.sort()
+    return clean_text(" ".join(word for _, word in positioned_words))
+
+
+def openalex_work_url(work: dict) -> str:
+    primary_location = work.get("primary_location") or {}
+    landing_page = primary_location.get("landing_page_url")
+    if landing_page:
+        return clean_text(landing_page)
+    doi = work.get("doi")
+    if doi:
+        return clean_text(doi)
+    return clean_text(work.get("id") or "")
+
+
+def openalex_authors_and_affiliations(work: dict) -> tuple[list[str], list[str]]:
+    authors: list[str] = []
+    affiliations: list[str] = []
+    for authorship in work.get("authorships", []):
+        author = authorship.get("author", {}).get("display_name") or authorship.get("raw_author_name") or ""
+        author = clean_text(author)
+        if not author:
+            continue
+        authors.append(author)
+        affiliations.append(openalex_affiliation_from_authorship(authorship))
+    return authors, affiliations
+
+
+def fetch_openalex_weekly(start_date: date, end_date: date, max_results: int = 100) -> list[Paper]:
+    params = {
+        "search": OPENALEX_FALLBACK_QUERY,
+        "filter": f"from_publication_date:{start_date.isoformat()},to_publication_date:{end_date.isoformat()}",
+        "per-page": min(max_results, 200),
+        "sort": "relevance_score:desc",
+    }
+    mailto = os.environ.get("OPENALEX_MAILTO", "").strip()
+    if mailto:
+        params["mailto"] = mailto
+
+    url = f"{OPENALEX_API}?{urllib.parse.urlencode(params)}"
+    request = urllib.request.Request(url, headers={"User-Agent": "ai-data-weekly-tracker/1.0"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    selected: list[Paper] = []
+    seen: set[str] = set()
+    for work in payload.get("results", []):
+        title = clean_text(work.get("title") or work.get("display_name") or "")
+        work_id = openalex_work_url(work)
+        if not title or not work_id or work_id in seen:
+            continue
+        seen.add(work_id)
+
+        published_raw = work.get("publication_date") or end_date.isoformat()
+        try:
+            published = date.fromisoformat(published_raw)
+        except ValueError:
+            published = end_date
+
+        summary = abstract_from_openalex(work)
+        topics = [
+            clean_text(topic.get("display_name", ""))
+            for topic in work.get("topics", [])
+            if clean_text(topic.get("display_name", ""))
+        ]
+        score, matched_keywords = score_openalex_work(title, summary, topics)
+        if score < 4:
+            continue
+
+        authors, affiliations = openalex_authors_and_affiliations(work)
+        category = "OpenAlex"
+        if topics:
+            category = f"OpenAlex · {topics[0]}"
+
+        selected.append(
+            Paper(
+                title=title,
+                authors=authors,
+                author_affiliations=affiliations,
+                summary=summary,
+                url=work_id,
+                published=published,
+                category=category,
+                score=score,
+                matched_keywords=matched_keywords,
+            )
+        )
+
+    selected.sort(key=lambda item: (item.score, item.published), reverse=True)
+    return selected[:20]
 
 
 def normalize_title(title: str) -> str:
@@ -285,7 +409,7 @@ def render_markdown(papers: list[Paper], start_date: date, end_date: date) -> st
         f"- **周期**：{start_date.isoformat()} 至 {end_date.isoformat()}",
         f"- **生成时间**：{generated_at}",
         f"- **论文数量**：{len(papers)}",
-        "- **范围**：arXiv cs.AI、cs.CL、cs.LG、cs.CV、stat.ML 中与 AI 数据相关的近 7 天论文",
+        f"- **范围**：{source_scope(papers)}",
         "",
         "## 本周概览",
         "",
@@ -361,6 +485,12 @@ def render_markdown(papers: list[Paper], start_date: date, end_date: date) -> st
     )
 
     return "\n".join(lines)
+
+
+def source_scope(papers: list[Paper]) -> str:
+    if papers and all(paper.category.startswith("OpenAlex") for paper in papers):
+        return "arXiv API 不可用时的 OpenAlex 兜底检索结果，按 AI 数据相关关键词筛选近 7 天论文"
+    return "arXiv cs.AI、cs.CL、cs.LG、cs.CV、stat.ML 中与 AI 数据相关的近 7 天论文"
 
 
 def infer_data_angle(paper: Paper) -> str:
@@ -498,6 +628,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip OpenAlex affiliation lookup and only use arXiv metadata.",
     )
+    parser.add_argument(
+        "--force-openalex-fallback",
+        action="store_true",
+        help="Skip arXiv and use the OpenAlex fallback source directly.",
+    )
     return parser.parse_args()
 
 
@@ -510,7 +645,14 @@ def main() -> int:
     WEEKLY_DIR.mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    papers = filter_weekly(fetch_arxiv(max_results=args.max_results), start_date, end_date)
+    if args.force_openalex_fallback:
+        papers = fetch_openalex_weekly(start_date, end_date, max_results=args.max_results)
+    else:
+        try:
+            papers = filter_weekly(fetch_arxiv(max_results=args.max_results), start_date, end_date)
+        except Exception as exc:
+            print(f"arXiv fetch failed; using OpenAlex fallback: {exc}", file=sys.stderr)
+            papers = fetch_openalex_weekly(start_date, end_date, max_results=args.max_results)
     if not args.no_affiliation_lookup:
         augment_affiliations_from_openalex(papers)
     markdown = render_markdown(papers, start_date, end_date)

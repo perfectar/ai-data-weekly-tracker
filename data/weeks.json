@@ -1,5 +1,65 @@
 [
   {
+    "week": "2026-W27",
+    "start": "2026-06-29",
+    "end": "2026-07-05",
+    "paper_count": 9,
+    "top_titles": [
+      "Cross-Domain Feature Expansion for Tabular Medical Data via Knowledge Graphs Injection",
+      "Beyond IID: How General Are Tabular Foundation Models, Really?",
+      "Intelligent Video Surveillance: A Systematic Review of Deep Learning Architectures, Multimodal Fusion, and the Emerging Role of Conversational AI (2018–2025)"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 7
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 4
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 3
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 1
+      }
+    ],
+    "file": "weekly/2026-W27.md",
+    "html_file": "weekly/2026-W27.html",
+    "updated_at": "2026-07-09T14:28:24+00:00"
+  },
+  {
+    "week": "2026-W26",
+    "start": "2026-06-22",
+    "end": "2026-06-28",
+    "paper_count": 11,
+    "top_titles": [
+      "Evaluating Structured Documentation as a Tool for Reflexivity in Dataset Development",
+      "Deep learning in acute ischemic stroke imaging: a systematic review of CT- and MRI-based segmentation, triage, and prognostic modeling",
+      "Multimodal Deep Learning Approaches for Lung Disease Detection: A Review"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 9
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 4
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 2
+      }
+    ],
+    "file": "weekly/2026-W26.md",
+    "html_file": "weekly/2026-W26.html",
+    "updated_at": "2026-07-09T14:29:04+00:00"
+  },
+  {
     "week": "2026-W25",
     "start": "2026-06-15",
     "end": "2026-06-21",

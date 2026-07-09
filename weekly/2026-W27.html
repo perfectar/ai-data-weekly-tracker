@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W27</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W27.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W27</h1>
+<ul>
+<li><strong>周期</strong>：2026-06-29 至 2026-07-05</li>
+<li><strong>生成时间</strong>：2026-07-09 14:28 UTC</li>
+<li><strong>论文数量</strong>：9</li>
+<li><strong>范围</strong>：arXiv API 不可用时的 OpenAlex 兜底检索结果，按 AI 数据相关关键词筛选近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>9</strong> 篇数据相关论文，主要集中在：数据集与基准（7）、表格、语音与非文本数据（4）、标注、隐私与安全数据（3）、合成数据与自生成数据（1）。</p>
+<p>优先关注前三篇：Cross-Domain Feature Expansion for Tabular Medical Data via Knowledge Graphs Injection；Beyond IID: How General Are Tabular Foundation Models, Really?；Intelligent Video Surveillance: A Systematic Review of Deep Learning Architectures, Multimodal Fusion, and the Emerging Role of Conversational AI (2018–2025)。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：7 篇相关论文。</li>
+<li><strong>表格、语音与非文本数据</strong>：4 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：3 篇相关论文。</li>
+<li><strong>合成数据与自生成数据</strong>：1 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. Cross-Domain Feature Expansion for Tabular Medical Data via Knowledge Graphs Injection</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-30</li>
+<li><strong>类别</strong>：OpenAlex · Machine Learning in Healthcare</li>
+<li><strong>作者</strong>：Mengying Zhou, Yuehan Yin, Haoyan Xin, Guoping Liu, Yang Chen</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、generated data、data scarcity、tabular data</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.31171">https://arxiv.org/abs/2606.31171</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Acquiring comprehensive cross-domain biomedical profiles is often costly and time- consuming, resulting in severe data scarcity in medical research. To address this challenge, we propose MedKGTab, a knowledge-injected framework specifically engineered for cross-domain feature expansion in tabular medical data. MedKGTab seeks to infer uncollected biomedical features from available ones by exploiting their inherent statistical dependencies and established medical correlations. By employing a row-column dual-attention mechanism, MedKGTab operates directly on raw structured tabular data, inherently capturing exact numerical distributions without the structural loss caused by tokenization. Crucially, MedKGTab integrates data-driven statistical priors with the SPOKE biomedical knowledge graph, achieving an optimal synergy between the data and knowledge channels. Within this synergy, the representations derived from the data channel are modulated by the injected biomedical knowledge, ensuring the final generated data are grounded in empirical medical research. Experimental results demonstrate that MedKGTab achieves high data fidelity and realistic data representation in cross-domain feature expansion. It outperforms both SOTA medical large models (e.g., Baichuan M3-plus) and specialized tabular models designed for medical data generation. Furthermore, MedKGTab consistently delivers superior performance across various data generation scenarios, whether inferring missing features within the same dataset or generalizing across different medical cohorts.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是用模型或程序化流程生成补充数据，再通过筛选、验证或评测闭环控制噪声，缓解真实标注数据不足的问题。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；合成数据与质量控制闭环；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可用合成数据补足小概率故障、极端天气、复杂机场场景和罕见告警样本，但必须配套专家审核、仿真一致性检查和风险分级过滤。</li>
+</ul>
+<h3>2. Beyond IID: How General Are Tabular Foundation Models, Really?</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-29</li>
+<li><strong>类别</strong>：OpenAlex · Machine Learning and Data Classification</li>
+<li><strong>作者</strong>：Lennart Purucker, Andrej Tschalzev, Nick Erickson, Gioia Blayer, David Holzmüller, Alan Arazi, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、tabular data</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.30410">https://arxiv.org/abs/2606.30410</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Foundation models for predictive machine learning on tabular data have recently gained significant traction in academia and industry. Research communities across disciplines are increasingly evaluating tabular foundation models on diverse datasets and tasks. However, these task- and discipline-specific evaluations remain largely inaccessible to model researchers because benchmark software and evaluation protocols are fragmented. As a result, model researchers rely on standard benchmarks, which are mostly defined for tasks where tabular foundation models already excel. The most challenging scenarios are excluded, limiting meaningful progress in the field by focusing on marginal improvements on IID data rather than on broader, more demanding challenges. To overcome this, we introduce BeyondArena, the first unified holistic benchmark for tabular data that supports diverse task types (IID, temporal, grouped), across sample size and feature dimensionality scales, with diverse feature types (with text, with high cardinality) from a broad range of disciplines. To enable unified benchmarking beyond standard benchmarks, we introduce Data Foundry, a Python framework and metadata schema for curating tabular datasets for predictive machine learning. Our results across 11 models and 142 curated datasets show that existing tabular foundation models excel on tiny- to medium-sized IID data, while traditional tree-based and deep learning models still dominate on non-IID, large, and high-dimensional datasets. BeyondArena guides model research for the most demanding challenges in tabular data, enabling progress towards truly foundational tabular models.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>3. Intelligent Video Surveillance: A Systematic Review of Deep Learning Architectures, Multimodal Fusion, and the Emerging Role of Conversational AI (2018–2025)</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-03</li>
+<li><strong>类别</strong>：OpenAlex · Anomaly Detection Techniques and Applications</li>
+<li><strong>作者</strong>：Nimmala Pravalika, Mittapally Sushmitha, Kommaraju Laasya, Kadiyala Ramana</li>
+<li><strong>作者单位</strong>：Nimmala Pravalika（Department of Artificial Intelligence and Data Science , Chaitanya Bharathi Institute of Technology , Hyderabad 500075 , India）；Mittapally Sushmitha（Department of Artificial Intelligence and Data Science , Chaitanya Bharathi Institute of Technology , Hyderabad 500075 , India）；Kommaraju Laasya（Department of Artificial Intelligence and Data Science , Chaitanya Bharathi Institute of Technology , Hyderabad 500075 , India）；Kadiyala Ramana（Department of Artificial Intelligence and Data Science , Chaitanya Bharathi Institute of Technology , Hyderabad 500075 , India）</li>
+<li><strong>关键词</strong>：dataset、benchmark、privacy</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.53941/aiet.2026.100008">https://doi.org/10.53941/aiet.2026.100008</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The rapid proliferation of urban surveillance infrastructure and the exponential growth of large-scale video data have intensified demand for automated, adaptive monitoring solutions. Recent deep learning advances have transformed conventional surveillance from rule-based systems into adaptive, context-aware frameworks capable of complex spatiotemporal activity detection, classification, and interpretation. This paper presents a comprehensive review of seventy-three deep-learning-based research studies on video anomaly detection (VAD) and human activity recognition published between 2018 and</p>
+<ol>
+<li>A systematic categorization of the surveyed works is performed with respect to ten</li>
+</ol>
+<p>major model families: CNNs for spatial feature extraction recurrent architectures (LSTM, GRU, Bi-LSTM) for temporal reasoning; 3D-CNN and spatiotemporal models for motion encoding autoencoder and generative adversarial frameworks for unsupervised reconstruction transformer and attention-based models for long-range dependency modeling memory-augmented networks for prototypeconstrained normality learning multimodal fusion architectures and edge-intelligent and conversational AI systems for scalable, interactive deployment. The results demonstrate a performance evolution from early CNN- based classifiers (around 85% AUC) to recent transformer-driven and memory-augmented methods achieving AUC values above 97% on UCF-Crime, ShanghaiTech, CUHK Avenue, and RWF-2000. The review additionally incorporates the MSAD multi-scenario benchmark and the CUVA causation dataset, and provides a methodological caveat on the comparability of AUC scores across heterogeneous supervision paradigms. Key open challenges—dataset imbalance, occlusion, illumination variation, domain generalization, and real-time latency—are mapped to research directions including weakly supervised MLLMs, privacy- preserving federated learning, and edge-optimized transformer pipelines.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>4. An In-Depth Survey on Multimodal Automatic Fact-Checking Datasets</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-01</li>
+<li><strong>类别</strong>：OpenAlex · Misinformation and Its Impacts</li>
+<li><strong>作者</strong>：Ian Marco Gallegos Carvajal, Beatrice Portelli, Leonardo Zini, Lorenzo Baraldi, Giuseppe Serra</li>
+<li><strong>作者单位</strong>：Ian Marco Gallegos Carvajal（Department of Mathematics, Computer Science and Physics, University of Udine, Via delle Scienze, 206, 33100, Udine, Italy）；Beatrice Portelli（Department of Agricultural, Food, Environmental and Animal Sciences, University of Udine, Via delle Scienze, 206, 33100, Udine, Italy；Department of Mathematics, Computer Science and Physics, University of Udine, Via delle Scienze, 206, 33100, Udine, Italy）；Leonardo Zini（Department of Engineering “Enzo Ferrari”, University of Modena and Reggio Emilia, Via P. Vivarelli, 10, 41125, Modena, Italy）；Lorenzo Baraldi（Department of Engineering “Enzo Ferrari”, University of Modena and Reggio Emilia, Via P. Vivarelli, 10, 41125, Modena, Italy）；Giuseppe Serra（Department of Mathematics, Computer Science and Physics, University of Udine, Via delle Scienze, 206, 33100, Udine, Italy）</li>
+<li><strong>关键词</strong>：dataset、annotation</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1007/s11042-026-21713-9">https://doi.org/10.1007/s11042-026-21713-9</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Abstract The rapid spread of misinformation poses a significant challenge in the digital age, with false claims appearing across multiple modalities, particularly combinations of textual and visual content such as images and videos. While automatic fact-checking plays a crucial role in countering misinformation, traditional approaches predominantly rely on textual data, often neglecting the multimodal nature of modern misinformation. In this survey, we provide a comprehensive evaluation of multimodal datasets designed for automatic fact-checking that combine textual and visual information, systematically analyzing their sources, annotation methodologies, and key statistical properties, such as class distribution, topic diversity, and label availability. Additionally, we assess the usability of these datasets in real-world scenarios, discussing their limitations, biases, and potential risks, such as information leakage. Motivated by the practical difficulties we encountered when attempting to integrate existing datasets into our own multimodal fact-checking pipeline, our work also offers concrete guidance to help researchers choose the most suitable resources. By identifying gaps and challenges in existing datasets, our survey aims to support the development of more reliable and scalable multimodal fact-checking systems.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>5. Deep learning and traditional methods for remote sensing image analysis</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-02</li>
+<li><strong>类别</strong>：OpenAlex · Remote-Sensing Image Classification</li>
+<li><strong>作者</strong>：S. V. B. Subrahmanyeswara Rao, T. Srinivasa Rao, M. Sowjanya, Ch V. Aruna</li>
+<li><strong>作者单位</strong>：S. V. B. Subrahmanyeswara Rao（Ramachandra College of Engineering, Eluru, Andhra Pradesh, 534007, India）；T. Srinivasa Rao（Koneru Lakshmaiah Education Foundation, Vaddeswaram, Andhra Pradesh, 522302, India）；M. Sowjanya（Vasireddy Venkatadri International Technological University, Nambur, Andhra Pradesh, 522508, India）；Ch V. Aruna（Ramachandra College of Engineering, Eluru, Andhra Pradesh, 534007, India）</li>
+<li><strong>关键词</strong>：dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1007/s44352-026-00027-4">https://doi.org/10.1007/s44352-026-00027-4</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Remote sensing and environmental monitoring have undergone transformative advances through the integration of advanced image processing techniques, particularly deep learning architectures. This systematic survey examines the evolution, current state, and comparative performance of image processing methods applied to remote sensing imagery. This review establishes a structured taxonomy categorizing techniques by approach (traditional vs. deep learning) and learning paradigm (supervised, unsupervised, and self-supervised). Prior work is critically synthesized; key strengths are identified, including the dominance of convolutional neural networks (CNNs), which achieve accuracies exceeding 97% on benchmark datasets such as EuroSAT, and limitations, such as computational complexity, data requirements, and generalization challenges. The experimental comparison section provides a detailed analysis of specific architectures (ResNet, U-Net, VGG, Vision Transformers) evaluated on standard benchmarks (EuroSAT, BigEarthNet, UC Merced, Sen12MS) with comprehensive performance metrics. Critical research gaps are identified, including the need for improved model efficiency, better handling of multispectral and hyperspectral data, enhanced generalization across diverse geographic regions, and development of interpretable models. This review serves as a comprehensive resource for researchers and practitioners in remote sensing, providing actionable insights for future research directions and practical applications in environmental monitoring. Key differentiators from existing surveys include a PRISMA- compliant search methodology, a unified taxonomy spanning traditional through diffusion- based methods, methodology-centric comparison tables, dedicated hyperspectral and diffusion model coverage, and explicit prioritization of research gaps.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>6. Artificial intelligence for genomic science: a scoping review of concepts, architectures, applications, and open challenges</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-03</li>
+<li><strong>类别</strong>：OpenAlex · Genomics and Rare Diseases</li>
+<li><strong>作者</strong>：Wellington Francisco Rodrigues, Mariana T. D. Parise, Doglas Parise, Lucas Moraes dos Santos, Priscyla dos Santos Ribeiro, Paula Ristow, et al.</li>
+<li><strong>作者单位</strong>：Wellington Francisco Rodrigues（Laboratory of Genetics, Biotechnology Institute, Federal University of Uberlândia；Molecular and Computational Biology of Fungi Laboratory, Department of Microbiology, Instituto de Ciências Biológicas, Universidade Federal de Minas Gerais；Multidisciplinary Laboratory of Scientific Evidence, University Center of Mineiros (Unifimes)）；Mariana T. D. Parise（Molecular and Computational Biology of Fungi Laboratory, Department of Microbiology, Instituto de Ciências Biológicas, Universidade Federal de Minas Gerais）；Doglas Parise（Molecular and Computational Biology of Fungi Laboratory, Department of Microbiology, Instituto de Ciências Biológicas, Universidade Federal de Minas Gerais）；Lucas Moraes dos Santos（Department of Computer Science, Universidade Federal de Minas Gerais）；Priscyla dos Santos Ribeiro（Expertise Centre for Leptospirosis / WOAH Reference Laboratory for Leptospirosis, Department of Medical Microbiology and Infection Prevention, Amsterdam University Medical Centers）；Paula Ristow（Expertise Centre for Leptospirosis / WOAH Reference Laboratory for Leptospirosis, Department of Medical Microbiology and Infection Prevention, Amsterdam University Medical Centers）；等</li>
+<li><strong>关键词</strong>：benchmark、privacy</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3389/fbinf.2026.1829576">https://doi.org/10.3389/fbinf.2026.1829576</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Introduction Artificial intelligence (AI) is becoming central to genomics and multi- omics, but its concepts, architectures, applications, evaluation standards, and translational requirements remain fragmented. This scoping review mapped how AI is defined and operationalized in genomic science, including machine learning, deep learning, graph-based methods, foundation models, and large language models, and synthesized their data modalities, applications, evaluation practices, interpretability strategies, and governance challenges. Methods We conducted a PRISMA-ScR scoping review with Joanna Briggs Institute guidance. Eligible studies applied AI to genomics or closely allied omics in research, clinical, or public health contexts. MEDLINE/PubMed, Embase, and supplementary registers were searched from January 2001 to 3 September 2025 without language restrictions. Records were screened in duplicate, and standardized items were extracted, including AI concept or method family, omics modality, task, metrics, interpretability, governance, and deployment considerations. Methodological reporting and quality were appraised using design-appropriate JBI tools and summarized descriptively as a normalized 0%–100% checklist-fulfillment index. Results From 3,785 records, 1,040 studies were included. Publication remained sparse until 2017 and then expanded steeply, with more than 90% appearing from 2018 onward. The normalized JBI checklist-fulfillment index was modest overall (mean 35.3%, SD 20.1; range 7.5%–87.5%) and was interpreted descriptively, not as a directly comparable quality score across designs. Conceptually, the field has moved from feature-engineered statistical learning toward representation learning systems modeling nucleotide sequences, regulatory context, single-cell states, multi-omics profiles, biomedical text, and clinical-genomic knowledge. Applications concentrated on variant interpretation, regulatory genomics, multi-omics integration, single-cell analysis, pathology/radiology-genomics fusion, and genomic decision support, with increasing use of deep learning, graph models, foundation models, and LLMs. Calibration, external validation, mechanistic interpretability, ancestry-aware fairness, privacy protection, and deployment models for sensitive genomic data were unevenly reported; prospective multisite evaluations were rare. Discussion AI in genomics has scaled rapidly since 2017–2018, but translation remains constrained by heterogeneous concepts, inconsistent benchmarks, incomplete reporting, and limited governance. Priorities include biologically meaningful benchmarks; calibrated uncertainty for genomic decision support; mechanism-linked interpretability; ancestry- and site-aware validation; privacy-preserving analysis of sensitive genomic data; and human oversight for variant interpretation, precision medicine, and public health genomics. Systematic Review Registration https://osf.io/uexzh .</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>7. From cars to clinics: interpretable machine learning for luxury automotive lifecycle and clinical case studies</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-29</li>
+<li><strong>类别</strong>：OpenAlex · Machine Learning in Healthcare</li>
+<li><strong>作者</strong>：Alessandro Ghibellini</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：data scarcity</li>
+<li><strong>链接</strong>：<a href="https://amsdottorato.unibo.it/view/dottorati/DOT536/&gt;,">https://amsdottorato.unibo.it/view/dottorati/DOT536/&gt;,</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>This thesis investigates how interpretable machine learning can drive strategic success in the luxury automotive sector and beyond by analyzing the customer lifecycle through three interconnected dimensions: personalization, retention, and residual value. Developed within a leading manufacturer’s ecosystem, the research first introduces a hybrid recommender system for highly configurable vehicles that achieves high precision and diversity through a scalable XGBoost architecture. To address customer churn during long waiting periods, a second contribution utilizes a CatBoost classifier enhanced by SHAP explanations and Large Language Models to provide actionable insights for dealerships. The third automotive pillar focuses on residual value estimation by integrating vehicle attributes with macroeconomic indicators, achieving a low mean absolute percentage error while introducing a standardized vehicle concept to isolate genuine market trends. Beyond the automotive domain, the methodology extends into high- stakes clinical and sports contexts characterized by data scarcity and heterogeneity. In neurology, the framework predicts GBA1 mutation status in Parkinson’s disease patients with 73% accuracy, identifying clinical patterns that support targeted genetic testing. In sports science, the model analyzes footballers’ biomechanics to identify movement phenotypes, achieving a macro-F1 \approx 0.92$ and providing actionable insights for preventing ACL injuries. Ultimately, this work demonstrates that encoding domain structure and prioritizing transparency allows deployment-oriented machine learning to function effectively even when data is scarce, effectively closing the loop between complex data insights and operational outcomes.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕一个具体 AI 任务梳理数据、模型与评测之间的关系，值得重点看其数据定义、实验设置和误差分析是否可迁移。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：优先复用其数据定义、样本组织和评测方式，并映射到航空中的安全事件、运行效率、维修保障和知识问答场景。</li>
+</ul>
+<h3>8. EvalSafetyGap: A Hybrid Survey and Conceptual Framework for LLM Evaluation-Safety Failures</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-29</li>
+<li><strong>类别</strong>：OpenAlex · Ethics and Social Impacts of AI</li>
+<li><strong>作者</strong>：Buğra Alperen Uluırmak, Rıfat Kurban</li>
+<li><strong>作者单位</strong>：Rıfat Kurban（Erciyes University University）；其余作者 arXiv 未提供单位</li>
+<li><strong>关键词</strong>：benchmark</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.30219">https://arxiv.org/abs/2606.30219</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>LLM evaluation and AI safety face a shared measurement problem: benchmark scores, reward-model signals, and reported safety metrics can improve while the latent properties they are meant to represent remain difficult to verify. This paper combines a hybrid survey - a systematic search paired with narrative synthesis and separately tracked grey evidence - with a conceptual framework and a structured ten-model audit. The synthesis spans eight evidence streams: benchmark validity, dynamic evaluation, LLM- as-judge reliability, safety evaluation, jailbreak/refusal robustness, reward hacking, mechanistic interpretability, and governance/auditability, covering 2018-2026 evaluation-safety measurement work. We introduce EvalSafetyGap as an organizing hypothesis for comparing evaluation-side and alignment-side proxy failures under optimization pressure, using Goodhart&#x27;s Law together with two constructs we develop here</p>
+<ul>
+<li>an Instability Decomposition and an Alignment Trilemma - as tools for generating</li>
+</ul>
+<p>testable comparisons. The audit shows how conclusions shift when capability, behavioral safety, and governance are measured separately. In this sample (n = 10), the association between capability and sustained adversarial robustness is statistically indeterminate using the displayed Table 3 inputs (Pearson r = +0.232, p = 0.520), and the apparent open-closed safety gap is modest, driven mainly by governance and disclosure rather than behavioral robustness, and sensitive to how a single borderline model is classified; attempt-budget results are protocol dependent. Because the public evidence uses heterogeneous protocols, the audit is diagnostic rather than rank-generating. The contribution is a shared vocabulary and evidence map to support dynamic evaluation, transparent source reporting, multi-attempt safety measurement, and auditable alignment practice.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>9. From API to Action: A Multi-Model Comparison of OpenAI, Anthropic, Google, and Meta LLMs for Clinical Trial Data Extraction</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-02</li>
+<li><strong>类别</strong>：OpenAlex · Machine Learning in Healthcare</li>
+<li><strong>作者</strong>：Richard Young, Jorge Ramón Fonseca Cacho, Brach Poston</li>
+<li><strong>作者单位</strong>：Richard Young（Interdisciplinary Neuroscience, University of Nevada, Las Vegas, NV 89154, USA）；Jorge Ramón Fonseca Cacho（Department of Computer Science, Howard R. Hughes College of Engineering, University of Nevada, Las Vegas, NV 89154, USA）；Brach Poston（Department of Kinesiology and Nutrition Sciences, University of Nevada, Las Vegas, NV 89154, USA；Interdisciplinary Neuroscience, University of Nevada, Las Vegas, NV 89154, USA）</li>
+<li><strong>关键词</strong>：N/A</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3390/bioengineering13070773">https://doi.org/10.3390/bioengineering13070773</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>(1) Background: Clinical trial data extraction from registries such as ClinicalTrials.gov remains labor-intensive and error-prone, often missing critical details hidden in unstructured protocol descriptions. Large Language Models (LLMs) offer potential to automate this process, yet systematic multi-model comparisons on real clinical trial data remain scarce. (2) Methods: Four LLMs (OpenAI o4-mini-high, Anthropic Claude-Sonnet-4, Google Gemini 2.5-Pro, and Meta Llama-4-Maverick) extracted brain stimulation parameters from 67 transcranial direct current stimulation (tDCS) trials in Parkinson’s disease via a structured JSON schema. Pairwise inter-model agreement was quantified with Cohen’s Kappa and percentage agreement across binary, categorical, and multi-component task tiers. (3) Results: Under exact-string matching, agreement was near-perfect for binary classifications (non-invasive classification: 100%; brain stimulation presence: 99.3%, κ = 0.50) and substantial for categorical extractions (primary stimulation type: 96.4%, κ = 0.70), but fell to 48.6% (κ = 0.43) for complex anatomical targets. Numeric parameters revealed model-specific strengths: o4-mini-high and Claude-Sonnet-4 achieved perfect duration agreement (r = 1.000, n = 19) while Llama-4-Maverick diverged substantially (r &lt; 0.12). Validation against an expert gold standard (100% inter-annotator agreement on a 20-trial overlap) confirmed high extraction accuracy across all features (mean 93.7–98.9%). Crucially, the low agreement on anatomical targets proved to be an artifact of exact-string scoring: under the same semantic matching used to measure accuracy, inter-model agreement rose to 97.0%, coinciding with the 95.5% expert accuracy. Inter-model agreement therefore tracks accuracy once both are measured on a common basis. (4) Conclusions: Exact-string inter- model agreement decreases with task complexity, but this decline largely reflects interchangeable free-text wording rather than reduced accuracy. Evaluated semantically, agreement and expert accuracy are both high and closely aligned. A residual risk is not low accuracy but the rare error shared across all models, which agreement cannot detect, and which overall accuracy can itself mask when one class dominates. These findings inform hybrid human–AI systematic review pipelines in which targeted expert oversight focuses on shared-error and minority-class detection.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">Markdown 更新时间：2026-07-09 14:28 UTC</div>
+    </article>
+  </div>
+</body>
+</html>

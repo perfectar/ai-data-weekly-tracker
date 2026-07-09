@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W26</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W26.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W26</h1>
+<ul>
+<li><strong>周期</strong>：2026-06-22 至 2026-06-28</li>
+<li><strong>生成时间</strong>：2026-07-09 14:29 UTC</li>
+<li><strong>论文数量</strong>：11</li>
+<li><strong>范围</strong>：arXiv API 不可用时的 OpenAlex 兜底检索结果，按 AI 数据相关关键词筛选近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>11</strong> 篇数据相关论文，主要集中在：数据集与基准（9）、表格、语音与非文本数据（4）、标注、隐私与安全数据（2）。</p>
+<p>优先关注前三篇：Evaluating Structured Documentation as a Tool for Reflexivity in Dataset Development；Deep learning in acute ischemic stroke imaging: a systematic review of CT- and MRI-based segmentation, triage, and prognostic modeling；Multimodal Deep Learning Approaches for Lung Disease Detection: A Review。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：9 篇相关论文。</li>
+<li><strong>表格、语音与非文本数据</strong>：4 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：2 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. Evaluating Structured Documentation as a Tool for Reflexivity in Dataset Development</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-25</li>
+<li><strong>类别</strong>：OpenAlex · Research Data Management Practices</li>
+<li><strong>作者</strong>：Eshta Bhardwaj, Ciara Zogheib, Christoph Becker</li>
+<li><strong>作者单位</strong>：Eshta Bhardwaj（Faculty of Information, University of Toronto, Toronto, Ontario, Canada）；Ciara Zogheib（University of Toronto, Toronto, Ontario, Canada）；Christoph Becker（University of Toronto, Toronto, Ontario, Canada）</li>
+<li><strong>关键词</strong>：dataset、corpus</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1145/3805689.3812411">https://doi.org/10.1145/3805689.3812411</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>It is prominently recognized that dataset development in machine learning is a value- laden process from problem formulation to data processing, use, and reuse. Structured documentation frameworks such as datasheets, data statements, and dataset nutrition labels have been created to aid developers in documenting how their datasets were produced and, according to the creators of the frameworks, to facilitate reflexivity in dataset development. While reflexivity is a stated goal, it is unclear whether and to what extent these structured dataset documentation frameworks incorporate concepts from reflexivity literature (at FAccT and elsewhere) and whether the use of the frameworks demonstrates reflexivity. Here, we adopt mixed-method thematic analysis and corpus- assisted discourse analysis to explore how reflexivity is incorporated in structured documentation frameworks and their responses. We demonstrate empirically that there is a general lack of engagement with major themes of reflexivity in both dataset documentation frameworks and published applications of these frameworks. We present a codebook of major reflexivity topics, recommend actionable strategies, and propose a set of extended datasheet questions to more effectively incorporate these topics into structured documentation frameworks and in the FAccT literature.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>2. Deep learning in acute ischemic stroke imaging: a systematic review of CT- and MRI-based segmentation, triage, and prognostic modeling</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-26</li>
+<li><strong>类别</strong>：OpenAlex · Acute Ischemic Stroke Management</li>
+<li><strong>作者</strong>：İsmail Kunduracıoğlu, Suat İnce, Bilal Bayram, Serhat Kilicarslan, Erkan Veziroglu, Ishak Pacal</li>
+<li><strong>作者单位</strong>：İsmail Kunduracıoğlu（Department of Computer Engineering, Igdir University, Igdir, Turkey. ismail.kunduracioglu@igdir.edu.tr）；Suat İnce（Department of Radiology, Van Education and Research Hospital, Van, Turkey）；Bilal Bayram（The Department of Neurology, Van Education and Research Hospital, Van, Turkey）；Serhat Kilicarslan（Department of Software Engineering, Bandırma Onyedi Eylül University, Bandirma, Turkey）；Erkan Veziroglu（Department of Computer Technologies, Dumlupinar University, Kütahya, Turkey）；Ishak Pacal（Department of Computer Engineering, Faculty of Engineering and Natural Sciences, Fenerbahce University, Istanbul, Turkey；Department of Computer Engineering, Igdir University, Igdir, Turkey；Department of Electronics and Information Technologies, Nakhchivan State University, Nakhichivan, Azerbaijan）</li>
+<li><strong>关键词</strong>：dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1007/s00234-026-04095-5">https://doi.org/10.1007/s00234-026-04095-5</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>BACKGROUND: Acute ischemic stroke is a time-critical neurological emergency in which imaging directly influences diagnosis, treatment eligibility, tissue-at-risk estimation, workflow prioritization, and outcome prediction. Deep learning has become increasingly prominent in stroke imaging; however, its clinical role differs substantially between computed tomography (CT) and magnetic resonance imaging (MRI). OBJECTIVE: This PRISMA- guided systematic review evaluated peer-reviewed studies published between January 2023 and March 2026 that applied deep learning to acute ischemic stroke imaging. METHODS: Searches across major biomedical, engineering, and clinical databases identified 91 eligible studies. Extracted data included imaging modality, dataset source, clinical task, model architecture, validation strategy, and reported performance metrics. RESULTS: MRI-based studies predominantly addressed lesion segmentation and tissue characterization using DWI, ADC, FLAIR, and multimodal MRI. In this setting, U-Net- derived architectures, self-configuring frameworks, attention-based models, and selected CNN-Transformer hybrids frequently achieved strong Dice and IoU values on benchmark datasets, particularly ISLES 2015 and ISLES 2022. CT-based studies followed a different clinical direction, with greater emphasis on emergency triage, hemorrhage exclusion, large-vessel occlusion detection, stroke classification, ASPECTS-related assessment, and CTP-based core-penumbra estimation. High retrospective accuracy or AUC values in CT studies should be interpreted cautiously, since image-level classification performance does not establish reliable voxel-level lesion delineation, especially on NCCT, where early ischemic changes remain subtle and difficult to segment. CONCLUSION: Across both modalities, technical progress remains ahead of clinical validation. External testing, patient-level separation, standardized reporting, scanner robustness, interpretability, and prospective workflow evaluation are still inconsistently addressed. The field now requires a shift from isolated benchmark performance toward clinically interpretable, externally validated, and prognosis-aware systems that can support real-time neuroradiology decision-making.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>3. Multimodal Deep Learning Approaches for Lung Disease Detection: A Review</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-24</li>
+<li><strong>类别</strong>：OpenAlex · Phonocardiography and Auscultation Techniques</li>
+<li><strong>作者</strong>：Bastian Estay Zamorano, Ali Dehghan Firoozabadi, Pablo Adasme, Wanda Montiel Piña, Mauricio Chávez Muñoz, David Zabala‐Blanco, et al.</li>
+<li><strong>作者单位</strong>：Bastian Estay Zamorano（Department of Electricity, Universidad Tecnológica Metropolitana, Santiago 7800002, Chile）；Ali Dehghan Firoozabadi（Department of Electricity, Universidad Tecnológica Metropolitana, Santiago 7800002, Chile）；Pablo Adasme（Department of Electrical Engineering, Universidad de Santiago de Chile, Santiago 9170124, Chile）；Wanda Montiel Piña（Department of Electricity, Universidad Tecnológica Metropolitana, Santiago 7800002, Chile）；Mauricio Chávez Muñoz（Department of Electricity, Universidad Tecnológica Metropolitana, Santiago 7800002, Chile）；David Zabala‐Blanco（Department of Computing and Industries, Universidad Católica del Maule, Talca 3466706, Chile）；等</li>
+<li><strong>关键词</strong>：dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3390/medicina62071223">https://doi.org/10.3390/medicina62071223</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Lung diseases are among the leading global causes of morbidity and mortality, and existing reviews on deep learning (DL) for pulmonary diagnosis rarely integrate imaging, acoustic, and electronic health record (EHR) modalities within a single framework. We aimed to synthesize the state of the art (2019–2024) in multimodal DL for lung disease detection and classification, identifying dominant architectures, performance benchmarks, and translational barriers across chest X-rays, CT scans, respiratory sounds, and EHRs. A structured narrative review was conducted using PubMed, Scopus, IEEE Xplore, and Web of Science, applying explicit inclusion criteria for peer-reviewed studies; performance metrics, dataset characteristics, and reported limitations were extracted. Research involving convolutional neural networks (CNNs) and more recent models such as Transformers have reported high performance in chest X-ray classification, whereas acoustic approaches based on spectrograms and self-supervised representations (e.g., Wav2Vec 2.0) show promising but dataset-dependent results.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；可复现的评测任务和指标设计；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>4. Yuvion VL: A Multimodal Foundation Model for Adversarial Content and AI Safety</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-23</li>
+<li><strong>类别</strong>：OpenAlex · Adversarial Robustness in Machine Learning</li>
+<li><strong>作者</strong>：Shikai Qiu, Xiaowen Xu, Benlei Cui, Ting Ma, XJ Huang, Wenjing Jiang, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.25034">https://arxiv.org/abs/2606.25034</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>General-purpose models often struggle to reliably identify and understand real-world multimodal risks, largely due to the inherent multimodal adversarial nature of content and AI safety. We present Yuvion VL, a family of multimodal large language models purpose-built for content and AI safety, with both instruction-tuned and reasoning- oriented variants. Yuvion VL addresses this gap by treating safety as an inherently adversarial and multimodal problem and designing the entire pipeline around adversarial robustness. For data construction, we develop an automated pipeline integrating adversarial-aware data synthesis with multi-stage quality control, producing large- scale, high-quality multimodal samples augmented with domain knowledge and reasoning annotations. For training, we adopt a three-stage pipeline that includes continued pretraining for risk-concept cross-modal alignment, instruct post-training for production-grade safety tasks, and reasoning post-training for enhanced interpretability and performance in complex tasks. We further introduce Confuse-then-Contrast Fine- Tuning, a contrastive framework that mines model-specific confusions and constructs multi-image contrastive groups to enforce explicit discrimination of fine-grained visual-semantic elements, enabling the model to distinguish between visually similar cases with different safety implications in adversarial safety tasks. To support rigorous evaluation, we further introduce Yuvion VL RiskEval (YVRE), a collection of benchmarks covering diverse open and internal evaluations, with a focus on content and AI safety, adversarial robustness, and real-world capability requirements. Experiments show that Yuvion VL-32B achieves industry-leading safety performance, surpassing comparably sized open-source models and best closed-source commercial models, while maintaining comparable general capabilities.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>5. Facial attribute-aware DeepFake detection through semi-supervised facial attribute labeling</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-24</li>
+<li><strong>类别</strong>：OpenAlex · Face recognition and analysis</li>
+<li><strong>作者</strong>：Vittorio Stile, Roberto Caldelli, Sara Balderas-Díaz, Gabriel Guerrero-Contreras, Inmaculada Medina-Bulo</li>
+<li><strong>作者单位</strong>：Vittorio Stile（Department of Engineering and Science, Mercatorum University）；Roberto Caldelli（Department of Engineering and Science, Mercatorum University；Interuniversity Consortium for Telecommunications - CNIT）；Sara Balderas-Díaz（Department of Computer Engineering, University of Cádiz）；Gabriel Guerrero-Contreras（Department of Computer Engineering, University of Cádiz）；Inmaculada Medina-Bulo（Department of Computer Engineering, University of Cádiz）</li>
+<li><strong>关键词</strong>：data curation、dataset</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3389/fimag.2026.1846377">https://doi.org/10.3389/fimag.2026.1846377</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>This study investigates the correlation between misclassifications in DeepFake detection and high-level facial attributes. A pre-trained frame-level classifier is used to distinguish manipulated from authentic video content, and its wrong predictions are analyzed in detail. To enrich the dataset, we automatically annotate each video with additional labels, including gender, hair color, hair length, ear visibility, and ethnicity, using a semi-supervised facial-attribute recognition pipeline. We extend this analysis with controlled training-time exclusions on FaceForensics++, keeping a unified test set to isolate generalization bias. Compared to the no-exclusion baseline (Accuracy = 0.806, AUC = 0.823), excluding samples with ears visible yields the largest degradation (Accuracy = 0.741, AUC = 0.763), while excluding non-visible ears has a milder effect (Accuracy = 0.813, AUC = 0.832). Hair length shows a moderate but consistent impact that interacts with ear visibility. We also explain the observed confusion-matrix asymmetry as a consequence of fixed score thresholds and video-level k-of-n aggregation. The results demonstrate that ear visibility is a critical factor for robust FAKE vs. REAL discrimination and motivate attribute-aware training, including targeted data curation, attribute-specific augmentation, and threshold calibration. The proposed framework provides actionable guidance for bias-aware training strategies and supports the development of more interpretable and operationally reliable DeepFake detection systems.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是先定义样本价值信号，再用过滤、配比或质量评估方法组织训练数据，目标是在更少或更干净的数据上获得更稳定的模型效果。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义；数据安全、隐私或污染控制；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可建立飞行阶段、机型、机场、气象、故障类型和传感器质量等维度的样本选择规则，避免训练集被高频普通航段淹没。</li>
+</ul>
+<h3>6. From Hallucination to Grounding: Diagnosing Visual Spatial Intelligence via CRISP</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-25</li>
+<li><strong>类别</strong>：OpenAlex · Multimodal Machine Learning Applications</li>
+<li><strong>作者</strong>：Zhixing Li, Yinan Yu</li>
+<li><strong>作者单位</strong>：Zhixing Li（Chalmers University of Technology , Gothenburg , Sweden）；Yinan Yu（Chalmers University of Technology , Gothenburg , Sweden）</li>
+<li><strong>关键词</strong>：dataset</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.26535">https://arxiv.org/abs/2606.26535</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Current VLM evaluations often conflate language priors with genuine spatial reasoning. To address this, we introduce CRISP, a novel structural-diagnostic evaluation paradigm that assesses visual spatial intelligence through consistency, the alignment between implicit perception and explicit reasoning. Unlike traditional black-box QA, CRISP utilizes metric 3D Scene Graphs and an oracle intervention protocol to decouple latent reasoning capabilities from perceptual bottlenecks. This granular diagnosis uncovers a systematic perception-reasoning disconnect. Crucially, we reveal that while proprietary models possess robust latent reasoning engines, they suffer from inaccurate metric estimation and a critical failure to leverage their implicit structural representations. Conversely, open-source models remain fundamentally bottlenecked by their lack of multi- hop compositional reasoning. By shifting the focus from merely `<code>guessing correctly&#x27;&#x27; via language priors to genuinely </code>`perceiving, verifying, and reasoning,&#x27;&#x27; CRISP offers a rigorous roadmap for multimodal alignment beyond end-to-end post-training. The code and dataset are available at https://github.com/iiyamayuki/CRISP-Bench.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>7. How Hyper-Datafication Impacts the Sustainability Costs in Frontier AI</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-23</li>
+<li><strong>类别</strong>：OpenAlex · Ethics and Social Impacts of AI</li>
+<li><strong>作者</strong>：Sophia N. Wilson, Sebastian Mair, Mophat Okinyi, Erik B. Dam, Janin Koch, Raghavendra Selvan</li>
+<li><strong>作者单位</strong>：Sophia N. Wilson（Computer Science, Copenhagen University, Copenhagen, Copenhagen, Denmark, and Physics, Copenhagen University, Copenhagen, Copenhagen, Denmark）；Sebastian Mair（Linköping University, Linköping, Sweden）；Mophat Okinyi（Techworker Community Africa, Nairobi, Kenya）；Erik B. Dam（University of Copenhagen, Copenhagen, Denmark）；Janin Koch（Univ. Lille, Inria, CNRS, Centrale Lille, Lille, France）；Raghavendra Selvan（Department of Computer Science, University of Copenhagen, Copenhagen, Denmark）</li>
+<li><strong>关键词</strong>：dataset</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1145/3805689.3812393">https://doi.org/10.1145/3805689.3812393</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Large-scale data has fuelled the success of frontier artificial intelligence (AI) models over the past decade. This expansion has relied on sustained efforts by large technology corporations to aggregate and curate internet-scale datasets. In this work, we examine the environmental, social, and economic costs of large-scale data in AI through a sustainability lens. We argue that the field is shifting from building models from data to actively creating data for building models. We characterise this transition as hyper- datafication, which marks a critical juncture for the future of frontier AI and its societal impacts. To quantify and contextualise data-related costs, we analyse approximately 550,000 datasets from the Hugging Face Hub, focusing on dataset growth, storage-related energy consumption and carbon footprint, and societal representation using language data. We complement this analysis with qualitative responses from data workers in Kenya to examine the labour involved, including direct employment by big tech corporations and exposure to graphic content. We further draw on external data sources to substantiate our findings by illustrating the global disparity in data centre infrastructure. Our analyses reveal that hyper-datafication drives substantial and growing environmental costs while systematically redistributing labour risks and representational harms toward the Global South. Thus, we propose Data PROOFS recommendations spanning provenance, resource awareness, ownership, openness, frugality, and standards to mitigate these costs. Our work aims to make visible the often- overlooked costs of data that underpin frontier AI and to stimulate broader debate within the research community and beyond.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>8. A Holistic Framework for Enhancing Machine Learning Reliability: From Model Architecture and Algorithm Design to Human Interpretability</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-23</li>
+<li><strong>类别</strong>：OpenAlex · Adversarial Robustness in Machine Learning</li>
+<li><strong>作者</strong>：Kyle Naddeo</li>
+<li><strong>作者单位</strong>：Kyle Naddeo（Rowan University）</li>
+<li><strong>关键词</strong>：benchmark</li>
+<li><strong>链接</strong>：<a href="https://rdw.rowan.edu/etd/3545">https://rdw.rowan.edu/etd/3545</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Modern machine learning systems can perform well on benchmarks yet fail in ways that are difficult for users to anticipate, interpret, or manage. This dissertation treats reliability as more than accuracy: a reliable system performs when it can, signals when it should not be trusted, and supports abstention, fallback, escalation, or human review. Unlike robustness, which emphasizes performance under shift, corruption, adversarial perturbation, or drift, reliability also requires recognizing limited competence, preserving useful semantic structure when fine-grained certainty is unjustified, and exposing mechanisms that make failures understandable. The dissertation develops this view through four contributions. Uncertainty-aware decision heads provide portable trust signals for classifiers and detectors. A modular perception-to-risk pipeline combines detection, tracking, intention estimation, and interpretable risk fusion for aerial threat prioritization. Hierarchy-aware classification enables semantic fallback by returning meaningful parent concepts when an exact leaf class is unavailable, unsupported, or withheld. Training-time reliability control is framed as learning to reallocate effort toward difficult or under-served groups. Together, these studies argue that trust improves when systems can state when they should not be trusted, explain why decisions are made, and adapt learning where standard optimization is weakest, yielding a unified view of reliability across model architecture, algorithm design, human interpretability, and decision support.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>9. The scales of justitia: A comprehensive survey on safety evaluation of LLMs</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-28</li>
+<li><strong>类别</strong>：OpenAlex · Ethics in Business and Education</li>
+<li><strong>作者</strong>：Songyang Liu, Chaozhuo Li, Jiameng Qiu, Xi Zhang, Feiran Huang, Litian Zhang, et al.</li>
+<li><strong>作者单位</strong>：Songyang Liu（Beijing University of Posts and Telecommunications, Beijing, 100876, China）；Chaozhuo Li（Beijing University of Posts and Telecommunications, Beijing, 100876, China）；Jiameng Qiu（Jinan University, Guangzhou, 510632, China）；Xi Zhang（Jinan University, Guangzhou, 510632, China）；Feiran Huang（Beijing University of Posts and Telecommunications, Beijing, 100876, China）；Litian Zhang（Beijing University of Posts and Telecommunications, Beijing, 100876, China）；等</li>
+<li><strong>关键词</strong>：N/A</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1016/j.inffus.2026.104579">https://doi.org/10.1016/j.inffus.2026.104579</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The scales of justitia: A comprehensive survey on safety evaluation of LLMs</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>10. Sentiment trajectory modeling in mental health discussions via transformer-based analysis</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-26</li>
+<li><strong>类别</strong>：OpenAlex · Mental Health via Writing</li>
+<li><strong>作者</strong>：Shaina U, Tamilarasi Kathirvel Murugan, Akshaya Poorna R, Logeswari Govindaraj, Joel Prince</li>
+<li><strong>作者单位</strong>：Shaina U（School of Computer Science and Engineering, Vellore Institute of Technology）；Tamilarasi Kathirvel Murugan（School of Computer Science and Engineering, Vellore Institute of Technology）；Akshaya Poorna R（School of Computer Science and Engineering, Vellore Institute of Technology）；Logeswari Govindaraj（School of Computer Science and Engineering, Vellore Institute of Technology）；Joel Prince（School of Computer Science and Engineering, Vellore Institute of Technology）</li>
+<li><strong>关键词</strong>：dataset</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3389/frai.2026.1810552">https://doi.org/10.3389/frai.2026.1810552</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Introduction Social media platforms produce a constant stream of user-generated text, which holds promise as a source of useful information regarding population-level and individual mental health states. However, existing methods for sentiment analysis on social media texts process these texts as individual, static instances, failing to consider the underlying dynamics of emotional states, which are naturally evolving in nature. Methods In this paper, we introduce a novel framework for Temporal Sentiment Progression Analysis, which uses domain-specific transformer architectures to reconstruct the entire emotional evolution of a user over a given period of time. This framework captures important aspects of emotional evolution, including variability, volatility, and key emotional inflection points in a user’s emotional progression. Our approach performs per-comment sentiment and thematic classification using transformer models, followed by post hoc statistical analysis to examine temporal patterns in user discussions. The framework was evaluated on a dataset of approximately 4,000 Reddit comments collected from eight mental health-related subreddits, with additional synthetic samples used only during training to address class imbalance. Performance evaluation was conducted exclusively on authentic Reddit comments and further validated using external Reddit-based mental health datasets and comparative baseline experiments. Results Our experimental results on a large-scale social media dataset reveal different sentiment progression archetypes, which are strongly correlated with self-reported mental health concerns. Our proposed framework achieves a high classification accuracy of 92%. Discussion Our approach shifts from static sentiment analysis to dynamic sentiment progression analysis, which can help in understanding the evolution of emotional distress in a more nuanced manner and can be useful in the development of context-aware interventions for mitigating mental health concerns.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>11. Deep Learning Approaches for 3D Medical Scene Completion: From Geometric Modeling to Generative Paradigms</h3>
+<ul>
+<li><strong>日期</strong>：2026-06-23</li>
+<li><strong>类别</strong>：OpenAlex · 3D Shape Modeling and Analysis</li>
+<li><strong>作者</strong>：Afifa Khaled, Said Jadid Abdulkadir, Majdy M. Eltahir</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：N/A</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2606.24180">https://arxiv.org/abs/2606.24180</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Three-dimensional scene completion has evolved as a major problem in computer vision and robotics, and its applications are diverse, including autonomous navigation and augmented reality. In this study, a systematic review has been conducted to compile the research contributions made in the last ten years, i.e., 2016 to 2026, which has revolutionized the field from the voxel semantic completion paradigm represented by SSCNet to the latest paradigm that combines generative diffusion priors with real-time rendering using a Gaussian splatting technique. The evolution in representation paradigms, such as voxel grids, point learning, implicit neural fields, transformer networks, diffusion networks, and the latest paradigm based on rendering-aware 3D Gaussian primitives, has been discussed in this study. A comprehensive analysis has been carried out on the contributions made in the last ten years, and a taxonomy has been developed to provide a clear idea about the contributions made in the field. The study has also discussed the research contributions made in the field, along with the challenges that still need to be addressed. Finally, the study has presented a research agenda that will provide a clear idea about the directions that can be followed in the development of the next-generation system</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把文本之外的图像、视频、语音或表格数据组织成可训练/可评测样本，使模型能够处理更接近真实业务流程的多源信息。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">Markdown 更新时间：2026-07-09 14:29 UTC</div>
+    </article>
+  </div>
+</body>
+</html>

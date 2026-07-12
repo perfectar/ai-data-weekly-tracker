@@ -1,5 +1,37 @@
 [
   {
+    "week": "2026-W28",
+    "start": "2026-07-06",
+    "end": "2026-07-12",
+    "paper_count": 20,
+    "top_titles": [
+      "Large-Language-Models-as-a-Judge in Theory-Agnostic Adaptive Metric-Alignment for Prototypical Networks in Personality Recognition",
+      "MASTE: A Multi-Agent Pipeline for Zero-Shot Aspect Sentiment Triplet Extraction",
+      "Wat3R: Underwater 3D Geometry Learning without Annotations"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 19
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 10
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 5
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 2
+      }
+    ],
+    "file": "weekly/2026-W28.md",
+    "html_file": "weekly/2026-W28.html",
+    "updated_at": "2026-07-12T02:01:04+00:00"
+  },
+  {
     "week": "2026-W27",
     "start": "2026-06-29",
     "end": "2026-07-05",

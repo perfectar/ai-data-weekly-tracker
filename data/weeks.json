@@ -1,5 +1,29 @@
 [
   {
+    "week": "2026-W29",
+    "start": "2026-07-13",
+    "end": "2026-07-19",
+    "paper_count": 4,
+    "top_titles": [
+      "Recent Advances in Transformer and Large Language Models for UAV Applications",
+      "Language-Guided Segmentation of Medical Images: A Review of Foundation Models",
+      "X-CapFusion: Efficient label-aware model for medical image captioning"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 3
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 3
+      }
+    ],
+    "file": "weekly/2026-W29.md",
+    "html_file": "weekly/2026-W29.html",
+    "updated_at": "2026-07-19T02:00:42+00:00"
+  },
+  {
     "week": "2026-W28",
     "start": "2026-07-06",
     "end": "2026-07-12",

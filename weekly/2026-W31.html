@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W31</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W31.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W31</h1>
+<ul>
+<li><strong>周期</strong>：2026-07-27 至 2026-08-02</li>
+<li><strong>生成时间</strong>：2026-08-02 02:00 UTC</li>
+<li><strong>论文数量</strong>：20</li>
+<li><strong>范围</strong>：arXiv cs.AI、cs.CL、cs.LG、cs.CV、stat.ML 中与 AI 数据相关的近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>20</strong> 篇数据相关论文，主要集中在：数据集与基准（18）、标注、隐私与安全数据（17）、表格、语音与非文本数据（5）、数据选择与过滤（2）。</p>
+<p>优先关注前三篇：OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models；RepBench: Compiling Benchmarks into Capability Representations for Large Language Models；FinSMART: Financial Sentiment Analysis for Algorithmic Trading through Market-Aligned Reinforcement Learning。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：18 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：17 篇相关论文。</li>
+<li><strong>表格、语音与非文本数据</strong>：5 篇相关论文。</li>
+<li><strong>数据选择与过滤</strong>：2 篇相关论文。</li>
+<li><strong>合成数据与自生成数据</strong>：1 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Qiushi Sun, Kanzhi Cheng, Yian Wang, Bowen Yang, Hang Yan, Liheng Chen, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：data curation、dataset、benchmark、annotation、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28609v1">http://arxiv.org/abs/2607.28609v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Computer-using agents (CUAs) are advancing rapidly across the digital world. A CUA trajectory records the agent&#x27;s actions, states, and reasoning. Verifying whether it fulfilled the task instruction is central to CUA evaluation, data curation, and reinforcement learning. Neither human-written verifiers nor human annotators can provide such verification at scale, so the field increasingly turns to vision-language models (VLMs) as judges of CUA trajectories. But a fundamental question has long gone unexamined: are these VLM judges reliable enough? To study it systematically, we introduce OSReward, a realistic, high-quality benchmark that evaluates VLM judges on CUA trajectories. The trajectories come from diverse agent backbones executing human- verified instructions across platforms, then rigorously labeled with ground-truth verdicts through multi-stage human annotation. Building on it, we derive OSReward-Hard, a challenge set concentrating genuinely hard cases, and OSReward-Multi for fine-grained efficiency and alignment scoring. The most comprehensive evaluation of VLM judges to date finds even state-of-the-art models fall short of an ideal judge, sharing a systematic leniency bias that mislabels failed runs as successes. The few reliable enough to trust are too expensive to run at scale, while affordable open models trail far behind. To close this gap, we construct and release OS-Shepherd-100K, an open corpus of reasoning-annotated trajectory judgments for the CUA community. On it, we train OS- Shepherd (9B and 35B), open reward models that supply low-cost, stable, and reliable reward signals, matching commercial judges at 30-60% lower cost than the frontier. Extensive analyses further inform the design of reliable CUA reward at scale. Our code, benchmark, dataset, and model checkpoints are available at https://os- copilot.github.io/OSReward-Home/.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是先定义样本价值信号，再用过滤、配比或质量评估方法组织训练数据，目标是在更少或更干净的数据上获得更稳定的模型效果。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可建立飞行阶段、机型、机场、气象、故障类型和传感器质量等维度的样本选择规则，避免训练集被高频普通航段淹没。</li>
+</ul>
+<h3>2. RepBench: Compiling Benchmarks into Capability Representations for Large Language Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Yanshi Li, Xueru Bai, Shuman Liu, Long Zhang</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、synthetic data、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28008v1">http://arxiv.org/abs/2607.28008v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Representation engineering reads and steers capability directions in large language models, yet methods are typically evaluated on paper-specific synthetic data. The resulting measurements are difficult to compare or reproduce and may reflect surface patterns rather than capabilities. We present RepBench, a benchmark-grounded data layer for capability-aligned representation probing. Crawling 13,427 benchmark papers yields a taxonomy of 182 capability clusters in 13 families; harvesting 353 public benchmark datasets yields 46,149 audited probe texts covering 94 capabilities, each supported by at least two independent benchmarks. This multi-benchmark design reduces dependence on any single source: raw per-text vectors exhibit no natural cluster granularity, whereas benchmark-pooled capability vectors show an interior clustering optimum at a small number of clusters on all 12 evaluated models, with low agreement to the human taxonomy. Under cross-benchmark transfer evaluation across twelve models completed by all four readouts, difference-in-means attains the highest model-level mean on ten models, while logistic regression wins the most capability-model cells. This disagreement shows that the readout method and aggregation criterion are meaningful evaluation dimensions. The pipeline, corpus, and evaluation code are released as a reusable closed-loop workflow.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向合成/自生成数据流程，值得关注生成质量控制、过滤策略和是否有人类或自动验证闭环。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是用模型或程序化流程生成补充数据，再通过筛选、验证或评测闭环控制噪声，缓解真实标注数据不足的问题。</li>
+<li><strong>主要亮点</strong>：亮点在于：合成数据与质量控制闭环；可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可用合成数据补足小概率故障、极端天气、复杂机场场景和罕见告警样本，但必须配套专家审核、仿真一致性检查和风险分级过滤。</li>
+</ul>
+<h3>3. FinSMART: Financial Sentiment Analysis for Algorithmic Trading through Market-Aligned Reinforcement Learning</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Giorgos Iacovides, Wuyang Zhou, Danilo Mandic</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、data filtering、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28127v1">http://arxiv.org/abs/2607.28127v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Recent advances in Generative AI have substantially improved financial sentiment analysis through post-trained financial large language models (LLMs). However, existing approaches remain confined to a market-agnostic, supervised learning paradigm that relies on limited, static and human-annotated datasets, and thus are incapable of adapting to evolving market conditions. To address this limitation, we introduce FinSMART, the first market-aligned reinforcement learning framework for financial sentiment analysis, which directly optimizes sentiment signals using realized market outcomes. To deal with the noisy, non-stationary, and multifactorial nature of financial markets, FinSMART incorporates a signal extraction pipeline that combines market-aware data filtering with a discrete asymmetric trading reward, enabling stable reinforcement learning from economically meaningful market feedback. Experimental results demonstrate that FinSMART significantly outperforms existing state-of-the-art methods in profitability, risk-adjusted performance, and sentiment signal quality, improving cumulative trading returns by 220% over the strongest baseline. Uniquely, the FinSMART framework naturally supports market-aware retraining, at any point in time, by replacing costly manual annotation with newly observed financial articles and their realized market outcomes. Such a retraining strategy enables the model to continuously adapt to changing market dynamics, resulting in consistent performance gains over its static counterpart. These findings demonstrate the practical applicability of market-aligned reinforcement learning and highlight its potential as a next-generation paradigm for developing adaptive financial LLMs.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>4. AI systems and the reproduction of (standard) language ideologies in World Englishes</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Kingsley Ugwuanyi</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：benchmark、training data、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28528v1">http://arxiv.org/abs/2607.28528v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The rapid growth of large language models (LLMs) has resurrected age-old questions in sociolinguistics and world Englishes, such as who decides what counts as legitimate English, whose English is suspect etc. This paper examines how AI systems, their uses and discourse on them reflect, reinforce, and occasionally challenge (standard) language ideologies, which privilege Inner Circle norms and marginalize non-dominant Englishes. Drawing on evidence from empirical studies, media commentary, social media debates, and examples from AI outputs, the paper shows that AI technologies reproduce dominant language ideologies at different levels: training data, design protocols, evaluation benchmarks, user feedback and public commentary. The analysis uses the public controversy over AI-sounding language, especially the fixation on the word delve, to illustrate how speakers of English from the Global North police the English language norms of Global South English users. The paper also identifies what Christian Mair has called a &quot;standardisation paradox&quot;: AI may homogenize English by privileging standard forms and at the same time pluralize Englishes through exposure to wide-ranging corpora and annotation work carried out by Global South users. In doing so, the paper argues that generative AI is reigniting long-standing debates in World Englishes about standardization, legitimacy, and the ownership of English, now playing out in algorithmic systems, model training, evaluation practices, and public discourse, where non-dominant Englishes are increasingly conflated with AI-generated speech. Discussing AI systems as a site where language ideologies are (re)produced, the paper argues for more inclusive design approaches that recognize the plurality of Englishes in order to address the real-world negative consequences of treating some as more legitimate than others.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>5. Scaling Vision-Language Models Is Not Enough to Mitigate Bias</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Ioannis Sarridis, Ioannis Kompatsiaris, Symeon Papadopoulos</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、training data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28211v1">http://arxiv.org/abs/2607.28211v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Vision-Language Models (VLMs) such as CLIP are now foundational to multimodal systems, yet their robustness to spurious correlations remains poorly understood at scale. We present the first large-scale empirical study of 194 publicly available VLMs, including 16 model families, covering a wide range of model sizes, 24 training datasets, and three evaluation benchmarks, namely ImageNet (overall performance), CelebA (typical single- attribute bias), and UrbanCars (complex multi-attribute biases). Across these settings, the Spearman correlation between model scale and performance weakens as evaluation shifts from ImageNet ($ρ{=}0.68$) to single-attribute ($ρ{=}0.48$) and further to multi- attribute ($ρ{=}0.05$) bias benchmarks. In contrast, properties of the training data (size and quality) show more consistent relationships with worst-group accuracy across both bias benchmarks. Notably, curated datasets yield improvements of up to 25% over uncurated alternatives at a comparable scale. Finally, the effect of architectural choices (e.g., patch size, image resolution) is highly context-dependent, varying with the nature of the benchmark, including the type of bias and its spatial distribution within images.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>6. PathView-Bench: Can Multimodal Large Language Models Achieve Fine-grained Multiscale Understanding of Pathology Images?</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Zongyi Chen, Yu Liang, Jie Lin, Liansheng Wang</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28318v1">http://arxiv.org/abs/2607.28318v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Multimodal large language models (MLLMs) are increasingly used to analyze pathology images. However, dominant multimodal benchmarks in pathology mainly score final diagnostic answers, captions, or reports. These evaluations provide limited insight into whether a model understands the multiscale visual content needed for pathology reasoning and decision-making. We introduce PathVU, a vision-anchored benchmark for fine-grained and multiscale visual understanding in computational pathology. Built from 23 public pathology imaging datasets with human-supervised labels and spatial annotations, PathVU evaluates MLLM understanding in two fields of view: Region FOV for high-resolution local regions and Slide FOV for macro whole-slide views. By converting raw annotations into deterministic task targets, PathVU enables programmatic scoring of region localization, visual recognition, quantity estimation, spatial reasoning, and insufficient-context judgment. The benchmark contains 14 VQA-style tasks, 61,673 images, and 308,070 samples across 28 organs and 7,253,526 annotations. Evaluating 18 representative general- purpose, medical-domain, and pathology-oriented MLLMs, we observe substantial limitations even in advanced models on fine-grained visual tasks across multiscale pathology images. PathVU provides a reproducible basis for developing and evaluating pathology MLLMs with explicit multiscale visual understanding.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>7. Beyond Rephrasing: Book-Level Organization Improves Synthetic Textbook Data for Mid-Training</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Jiawen Tao, Miao Peng, Yaoming Li, Xiaokun Yuan, Mengzhou Wu, Wenhan Yu, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：training data、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28109v1">http://arxiv.org/abs/2607.28109v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Synthetic textbook data has improved language model pre-training, but prior work largely treats the benefit as a property of generated content or local rewriting style. We study a different factor: whether related content is organized into coherent book-level documents. We contribute both a scalable synthesis pipeline and controlled evidence that this organization matters. The pipeline retrieves source material from a pre-training corpus, clusters it into topical units, plans hierarchical tables of contents, and assembles source-grounded sections into complete books (our Full setting), yielding 686K textbooks (32B tokens) across 15,000+ disciplines. Replacing natural books in a mid- training mix with this corpus improves downstream performance by +1.09 on average. Controlled comparisons then disentangle the relevant design factors. A content-matched Split condition holds generated text and tokens fixed but treats each section as an independent document; Full&#x27;s +1.02 mean gain isolates document packaging. A length- matched RandomConcat control that joins sections from different books remains below Full, ruling out document length alone. A retrieval-pool-matched Rephrase condition independently rewrites individual retrieved documents under the same audience-by-style scheme, without clustering, TOC planning, or book assembly; Full&#x27;s +1.17 gain demonstrates the value of structured synthesis. On Llama3-8B, Full likewise outperforms both RandomConcat and Natural Books, supporting book-level organization as a useful axis for synthetic pre-training data design.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>8. Harnessing the Potential of Optimizing Data Mixtures via Bayesian Domain Reweighting</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Xiang Yuan, Kaiqing Lei, Zhenyu Jin, Jun Shu, Deyu Meng, Zongben Xu</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：training data、data mixture</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.27928v1">http://arxiv.org/abs/2607.27928v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The performance of Large Language Models (LLMs) is fundamentally influenced by the distributional composition of multi-domain pre-training data. While manual heuristics were prevalent in early models, they increasingly fail to capture the intricate synergies between domains as data complexity grows. To overcome the issue, a dominant approach seeks to fit a proxy function mapping between domain weights and their corresponding validation losses, and then find the optimal domain weights to minimize validation losses. These methods rely on strong structural assumptions, such as rank invariance or scaling laws, which are often violated, resulting in non-negligible estimation bias. A promising approach is to directly optimize the weighting scheme from data. However, it suffers from unstable optimization trajectory and prohibitive computational overhead, limiting its potential to search better domain weights configurations. This paper presents a Bayesian domain weighting method to infer the weights from a Dirichlet distribution via introducing Gamma prior information learned from observations. Experimental results demonstrate that proposed method could achieve stable and efficient domain weights learning, and identifies optimal mixtures while consuming substantially less data than search-based function-fitting methods, revitalizing optimization-based domain weighting for large-scale applications.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向训练前或微调前的数据筛选方法，值得关注其选择信号、验证集设计和样本效率。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是先定义样本价值信号，再用过滤、配比或质量评估方法组织训练数据，目标是在更少或更干净的数据上获得更稳定的模型效果。</li>
+<li><strong>主要亮点</strong>：亮点在于：数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可建立飞行阶段、机型、机场、气象、故障类型和传感器质量等维度的样本选择规则，避免训练集被高频普通航段淹没。</li>
+</ul>
+<h3>9. Large scale cross-regional remote sensing flood monitoring framework for operative mapping and impact analysis</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Ilya Novikov, Svetlana Illarionova, Ruslan Dzharkinov, Maria Smirnova, Ayrat Abdullin, Anna Korotkova, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、labelled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28401v1">http://arxiv.org/abs/2607.28401v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Effective flood monitoring is critical for minimizing the impacts of flood disasters on populations and infrastructure. Yet reliable remote sensing across extensive and environmentally diverse regions remains challenging, as most segmentation algorithms lack the generalisation capacity required for large-scale application, while annotated flood data are scarce and unevenly distributed. This study presents an end-to-end multimodal framework for Russian Federation territories sustainable flood monitoring and damage assessment based on synthetic aperture radar data, multispectral imagery, and digital elevation models with their derivatives, forming a 21-channel input. Using a self-collected multimodal dataset covering seven Russian regions, two strategies for water surface detection under limited data conditions were compared: a supervised U-Net++ model and the self-supervised AnySat architecture pre-trained and fine-tuned for the segmentation task. Under the data conditions of this study, supervised learning proved more effective, while the AnySat-based approach offered greater stability and retains advantages for settings where larger unlabelled data or missing modalities at inference are expected. The best flood area predictions were used to estimate flood impact in urban areas in terms of the area affected, material damage, casualties, and ecological and agricultural impact. The estimations were conducted following the official methodology of the Russian Ministry of Emergency Situations. Applied to the 2019 Tulun flood, the obtained results closely matched official assessments, except for material damage, due to the open-source databases usage. The results demonstrate the potential of deep learning and multimodal satellite data integration for scalable, reliable flood monitoring across diverse environmental and data-limited conditions.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>10. A Distributed Acoustic Sensing Dataset for Vessel Detection and Localization in Submarine Cable Protection</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：physics.geo-ph</li>
+<li><strong>作者</strong>：Erick Eduardo Ramirez-Torres, Javier Macias-Guarasa, Daniel Pizarro, Javier Tejedor, Sira Elena Palazuelos-Cagigas, Pedro J. Vidal-Moreno, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28306v1">http://arxiv.org/abs/2607.28306v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Recent incidents of accidental damage and suspected sabotage to submarine telecommunication and power cables, particularly in the Baltic Sea, have underscored their vulnerability and the need for continuous monitoring solutions. Distributed acoustic sensing (DAS) applied to submarine optical-fiber cables enables wide-area monitoring of underwater acoustic activity. We present the Marlinks-NS DAS dataset, comprising processed submarine DAS measurements and AIS-derived vessel information curated for cable-protection research. The dataset defines two machine-learning tasks (vessel detection and vessel-to-cable distance estimation) allowing reproducible research under realistic marine conditions. The dataset contains 74,771 labeled data instances from ten days of continuous recording along a 2,554 m segment in a 28 km buried fiber-optic cable in the North Sea. Each instance includes spectral-energy features from 250 sensing channels, together with anonymized distance measurements and metadata from AIS information. The released HDF5 data, documentation, processing description, and example code support reproducible development and evaluation of DAS- based vessel-monitoring methods for submarine cable protection.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>11. Semi-Supervised Learning for Molecular Graphs via Ensemble Consensus</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Rasmus Tirsgaard, Laurits Fredsgaard, Marisa Wodrich, Mikkel Jordahn, Mikkel N. Schmidt</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28304v1">http://arxiv.org/abs/2607.28304v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Machine learning is transforming molecular sciences by accelerating property prediction, simulation, and the discovery of new molecules and materials. Acquiring labeled data in these domains is often costly and time-consuming, whereas large collections of unlabeled molecular data are readily available. Standard semi-supervised learning methods often rely on label-preserving augmentations, which are challenging to design in the molecular domain, where minor changes can drastically alter properties. In this work, we show that semi-supervised methods that rely on an ensemble consensus can boost predictive accuracy across a diverse range of molecular datasets, task types, and graph neural network architectures. We find that training with an ensemble consensus objective increases robustness in models and exhibits an effect similar to knowledge distillation; an individual member of an ensemble trained this way outperforms a full ensemble trained in a traditional supervised fashion in almost all cases. In addition, this type of semi- supervised training reduces calibration error.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>12. Theia: Large-Scale Multimodal Captioning and Automated Validation of the Incidents1M Dataset for Data-Free Distillation</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Simone Giano, Lorenzo Severini, Alessandro Galdelli, Adriano Mancini</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28269v1">http://arxiv.org/abs/2607.28269v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>The deployment of Vision-Language Models (VLMs) in critical domains like disaster management requires high-quality multimodal datasets, especially for transferring knowledge via Data-Free Knowledge Distillation (DFKD). However, existing datasets in this domain either entirely lack descriptive text, such as Incidents1M, or suffer from severe text-image semantic misalignment, such as CrisisMMD. In this work, we present a novel methodology to construct and automatically validate a large-scale multimodal dataset for disaster response. Starting from the vision-only Incidents1M, we successfully recovered 100,000 images and generated high-fidelity textual descriptions using two distinct Qwen3.5 architectures: a 4B dense model and a 35B Mixture-of-Experts (MoE) model. To ensure the generated captions provide reliable semantic anchoring for DFKD, we introduce an image-blind LLM-as-a-Judge validation pipeline leveraging Qwen3.5-9B. By intentionally obscuring the original image from the judge, this evaluator accurately simulates the modality gap of the student model during data-free distillation. Our evaluation across 173,179 label pairs demonstrates a high semantic agreement (78.65/100) between the two architectures. Furthermore, the automated evaluation reveals a conservative captioning behaviour, characterized by a high Precision (77.6%) and low Recall (46.0%). This minimizes the false positive noise, while simultaneously exposing underlying human annotation inconsistencies in the original ground truth. This work provides a scalable, LLM-validated multimodal dataset and a reproducible framework to advance cross-modal knowledge distillation.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>13. ConMem: Contribution-Aware Memory for Long-Horizon Manufacturing Inspection Logs</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.AI</li>
+<li><strong>作者</strong>：Bingchen Liu, Yuanyuan Fang, Lei Liu, Guangyuan Dong, Xing Fu, Yuanyuan Gao, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28126v1">http://arxiv.org/abs/2607.28126v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Long-horizon steel-equipment inspection requires reasoning over heterogeneous records accumulated across repeated inspection cycles. Existing retrieval-augmented generation systems treat historical logs as a static corpus and retain records without estimating their diagnostic value, failing to report early risk. To this end, we propose ConMem, a contribution-aware memory framework for LLM-assisted equipment inspection, supporting a human-in-the-loop early-risk screening system. Specifically, our ConMem first segments inspection logs into functional evidence units, then estimates each memory unit&#x27;s contribution to downstream diagnosis through a Shapley-style estimation, and finally retains high-value evidence under a constrained memory budget. In experiments, we evaluate ConMem on real-world dataset and ConMem achieves 76.0% QA accuracy, exceeding the strongest directly comparable baseline. Relative to the naive 8K-context LLM baselines, it reduces the average number of input tokens by 88.2% and response time by 86.6%. Ablation studies also show that the functional-role-aware segmentation and contribution-based valuation are helping prioritize weak degradation signals for targeted field inspection. Practical deployments further confirm that ConMem retains the weak early signal across three inspection cycles, providing an early-stage seal-wear alert targeted for on-site inspectors.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>14. Challenges in annotations by humans and LLMs: A case study of evaluative language</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CL</li>
+<li><strong>作者</strong>：Mirela Imamovic, Aenne Cecilia Kristine Knierim, Khushi Pitroda, Ekaterina Lapshinova-Koltunski</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：annotation、corpus</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28119v1">http://arxiv.org/abs/2607.28119v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>In this paper, we draw a comparison between linguists in training, a trained linguist, and annotations generated by large language models (LLMs) to find out if they struggle with complex linguistic phenomena in a similar way. For this purpose, we analyse evaluative language in spoken popular science discourse, with the example of a corpus of English TED talk transcripts. We focus on the Appraisal theory and its Attitude subsystem, including the categories (classes) of Affect, Judgement, and Appreciation. In this context, Appraisal theory is an example of a highly subjective annotation task, making it a suitable example for the study of complex annotation challenges. First, we assess human annotations on a sentence level in specific scientific domains. Then, we develop three prompts and compare them for model performance for the automatic classification of Appraisal classes. We assess the performance of three LLMs using the best-performing prompt and finetune the model, reaching an F1-score of 0.77. We find that models perform best compared to annotations conducted by the trained linguist, while linguists in training do not reach high agreement scores. We conclude that LLMs can aid in complex annotation task resolution, opening new pathways for the complex theories annotated and analyzed in digital humanities studies.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>15. BladeYOLO: Wind Turbine Blade Defect Detection with Limited Annotations and Weak-Saliency Awareness</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Yabin Xu, Fangtao Zhang, Fan Wang, Zhan Wang, Honghua Chen, Mingqiang Wei, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28065v1">http://arxiv.org/abs/2607.28065v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Wind turbine blade defect detection remains highly challenging in real-world inspection scenarios due to limited on-site data and the subtle visual characteristics of defects. In practice, blade defects are often small-scale, low-contrast, and difficult to distinguish from complex backgrounds, which significantly limits the robustness of existing detectors. To address these challenges, we propose BladeYOLO, a defect detection framework for wind turbine blades. Specifically, we integrate a Vision Transformer (ViT) backbone initialized with DINOv3 self-supervised pre-trained weights into YOLOv12-L, enabling the transfer of large-scale generic visual priors to blade defect detection and improving feature representation under limited training annotations. To enhance the perception of subtle defects, we further develop a Mamba- guided Weak-Defect Enhancement module, which consists of a Detail-Enhanced Multi-scale Branch for preserving high-frequency structural cues and a Cross-Mamba module for progressively propagating high-level semantic guidance to shallow features. In addition, we introduce a lightweight Style-Injector module that captures environment-related style information via Fourier decomposition and injects it into selected ViT self-attention layers, thereby improving robustness against environment-induced appearance variations. Extensive experiments demonstrate that BladeYOLO achieves superior performance on the WTBlade-Defect dataset, with additional annotation-budget experiments showing its favorable performance under reduced training annotations. Evaluation on the public Wind Surface Defect dataset further provides supportive evidence for the cross-dataset robustness of BladeYOLO. In particular, on this public dataset, BladeYOLO outperforms the best competing method by 3.5\% in mAP$_{50}$ and 2.5\% in mAP$_{50-95}$.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>16. Temporal Concentration from Rollout Errors: Implicit Preference Optimization for Text-to-Video Diffusion</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Henglin Liu, Fangyuan Kong, Jing Wang, Yizhou Lin, Nisha Huang, Chang Liu, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28058v1">http://arxiv.org/abs/2607.28058v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Recent advances in preference alignment for diffusion-based video generation, particularly via Direct Preference Optimization (DPO), have significantly improved visual quality. However, temporally sparse artifacts such as motion collapse, object flickering, and color oversaturation remain a major barrier to perceptual realism. Existing methods struggle with these issues due to two key limitations: (1) the preference attribution bottleneck, where offline human annotations are costly and fail to accurately capture learning dynamics, while online reward signals are rollout-aware but often unstable and biased; and (2) temporal credit misallocation, where uniformly applied supervision cannot effectively target the brief segments in which artifacts occur. To address these challenges, we propose concentrated Implicit Preference Optimization (cIPO), a post-training framework for video diffusion models. cIPO derives implicit preference signals directly from the denoising process: given a real video, the model adds forward noise and reconstructs it via iterative denoising, treating the original as the preferred sample and the reconstruction as the dispreferred one. This formulation captures inference-time errors without requiring human annotations or external reward models. Moreover, frame-level discrepancies between original and reconstructed videos reveal when failures occur. cIPO leverages this by computing temporal reconstruction errors and concentrating optimization on high-error segments, enabling more precise correction of failure-prone regions. Extensive experiments demonstrate that cIPO consistently enhances video authenticity and temporal coherence across multiple datasets, highlighting the effectiveness and efficiency of implicit preference with temporally concentrated optimization.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；标注体系和标签定义；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>17. Beyond Classification: Pathology Foundation Models as Detection Encoders for Mitotic Figures</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.CV</li>
+<li><strong>作者</strong>：Sweta Banerjee, Alireza Teimoury, Nils Porsche, Alexandra K. Stoll, Viktoria Weiss, Niklas Hargarter, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.28007v1">http://arxiv.org/abs/2607.28007v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Pathology foundation models (FMs) are models trained on vast amounts of typically unlabeled data and have been shown to yield regularized latent spaces that can be used effectively in downstream classification tasks. This is also true for the classification of mitotic figures vs. other cells. However, it is so far unclear if the latent space of current FMs provides features that are discriminant and spatially suitably resolved to also serve as a backbone for dense object detection paradigms. In this work, we investigate this question for common current pathology FMs (UNI, UNI2-h, Virchow, Virchow2, H-optimus-0, H-optimus-1) and compare their performance against a fully end- to-end trained baseline based on a ResNet50 architecture. We combine FM backbones with representatives of single stage, dual stage and self-attention-based detectors (RetinaNet, Faster R-CNN, Deformable DETR respectively) on the multi-domain MIDOG++ dataset, and on the TUPAC16 dataset as an out-of-domain case. We show that the H-optimus-0 and Virchow models yielded competitive performance, indicating that the latent spaces of current FMs, all trained on image-level self-supervision, are suitable for direct mitotic figure detection and may be slightly more robust on our out-of-domain test case. All code is made available publicly at https://github.com/DeepMicroscopy/FM4MFdet.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是围绕特定任务构建数据集或语料，重点在数据来源、标注规范、样本覆盖和任务定义上形成可复用的数据资产。</li>
+<li><strong>主要亮点</strong>：亮点在于：标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航空事件、维修缺陷、部件更换、飞行阶段、管制意图和安全风险建立统一标签体系，并记录标注依据与复核流程。</li>
+</ul>
+<h3>18. SciSchema.org: A Multidisciplinary Collection of Schemas for Structured Scientific Process Descriptions</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.DL</li>
+<li><strong>作者</strong>：Jennifer D&#x27;Souza, Sameer Sadruddin, Anisa Rula, Ana Bossler, Andrés Fullana, Enric Bas, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、annotation</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.27955v1">http://arxiv.org/abs/2607.27955v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Scientific processes are often described in heterogeneous article discourse, with details needed for comparison, reproducibility, reuse, and automation dispersed across prose, tables, figures, protocols, and supplementary files. We present the first release of SciSchema.org, a multidisciplinary collection of 16 expert-annotated schemas spanning Biology &amp; Biotechnology, Materials &amp; Chemistry, Imaging &amp; Measurement, Physics, and Psychology. Each schema defines reusable fields for describing process instances, including inputs, outputs, materials, instruments or software, parameters, conditions, procedural steps, measurements, and provenance-related information. The schemas were created through a human-in-the-loop schema-mining workflow in which large language models generated candidate structures from process specifications, scientific articles, and expert feedback, followed by domain-expert construction of final master schemas. The dataset contains final schemas in JSON Schema and SHACL formats, intermediate model- generated schemas, expert-feedback records, source-paper metadata, community-development materials, and analysis scripts. Technical validation assessed schema structure, development provenance, expert review, and syntactic conformance. The collection supports structured annotation, metadata enrichment, scientific knowledge graphs, information extraction, semantic publishing, and cross-study comparison.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>19. TriShield: Zero-Utility-Loss Defense Against Privacy Backdoors in Federated Language Model Fine-Tuning via Orthogonal Gradient Projection and Optimizer State Entanglement</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Cheng Wei</li>
+<li><strong>作者单位</strong>：Cheng Wei（Honor Device Co., Ltd., Shenzhen, China）</li>
+<li><strong>关键词</strong>：training data、privacy</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.27940v1">http://arxiv.org/abs/2607.27940v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Federated fine-tuning of large language models (LLMs) enables collaborative training without exposing raw data. However, a recent attack, NeuroImprint [1] (arXiv:2606.20553), demonstrates that a malicious parameter server can corrupt a PEFT adapter into a privacy backdoor: by assigning a dedicated memorization neuron to each training sample and ensuring each neuron updates at most once, the server can analytically reconstruct 59\%--79\% of client training data with high semantic fidelity. Existing defenses---including local differential privacy (LDP) [8] and gradient clipping ---either fail against this attack or impose unacceptable utility degradation. We present \textbf{TriShield}, a three-layer deterministic defense that completely prevents NeuroImprint-style reconstruction with \textbf{zero model utility loss} and \textbf{no additional communication rounds}. TriShield consists of: (1) a \textbf{Parameter Artifact Detector} that identifies memory-neuron signatures in distributed model parameters before local training begins; (2) a \textbf{Stateful Virtual Iteration} mechanism that forces Adam/AdamW&#x27;s momentum state to irreversibly entangle gradients across virtual steps, invalidating NeuroImprint&#x27;s closed-form inversion; and (3) a \textbf{Zero-Utility Orthogonal Projection} operator that projects all local gradient updates onto the main-task semantic subspace computed via SVD, physically eliminating any gradient components that carry private memorization. We prove theoretically that after Layers 2 and 3, the mutual information between the uploaded gradient and any individual training sample is zero. Experiments on GPT-2 (117M) and Llama-Guard-3-1B verify that TriShield reduces NeuroImprint reconstruction rate to \textbf{0\%} across all tested attack variants, while maintaining or improving training accuracy, with less than 5\% additional GPU computation overhead.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向标注、隐私或安全数据，值得关注 taxonomy 设计、标注一致性和敏感数据处理边界。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是识别数据使用中的隐私、污染、偏差或安全风险，并通过检测、约束或评估机制降低模型训练和部署的不确定性。</li>
+<li><strong>主要亮点</strong>：亮点在于：数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把航司、旅客、机组和运行安全相关字段纳入脱敏、权限、污染检测和偏差审计流程，降低数据进入模型后的合规与安全风险。</li>
+</ul>
+<h3>20. S-CEReBrO: Breaking the Memory Barrier in Continuous EEG Monitoring</h3>
+<ul>
+<li><strong>日期</strong>：2026-07-30</li>
+<li><strong>类别</strong>：cs.LG</li>
+<li><strong>作者</strong>：Glenn Anta Bucagu, Thorir Mar Ingolfsson, Yawei Li, Luca Benini</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、labeled data</li>
+<li><strong>链接</strong>：<a href="http://arxiv.org/abs/2607.27913v1">http://arxiv.org/abs/2607.27913v1</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Foundation models offer a promising paradigm for Electroencephalography (EEG) analysis, leveraging generalizable representations from vast unlabeled datasets. Yet, Transformer- based architectures face a critical bottleneck: global attention mechanisms couple the attention memory state to the signal duration, causing memory overflow during continuous monitoring. To address this, we introduce S-CEReBrO (Streaming CEReBrO), an evolution of the CEReBrO architecture designed for continuous monitoring. Our novel Windowed Alternating Attention mechanism factorizes attention computation into fixed-size spatiotemporal windows, guaranteeing constant KV cache memory as only the active window requires resident attention maps. Empirical scaling analysis confirms that windowed alternating attention can process signals 100X longer than full self-attention and 3X longer than low-rank linear attention. Compared to low-rank linear attention on long contexts, windowed alternating attention requires 55% of the memory while increasing inference throughput by 2.1X. Pre-trained on &gt;25,000 hours of recordings from &gt;12,000 subjects, S-CEReBrO achieves state-of-the-art performance on 7 of 11 downstream tasks, with up to 60% fewer parameters. This work represents a significant step toward the realization of efficient, generalizable, and continuous EEG monitoring. An accompanying code repository is available.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">Markdown 更新时间：2026-08-02 02:00 UTC</div>
+    </article>
+  </div>
+</body>
+</html>

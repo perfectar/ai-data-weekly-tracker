@@ -1,5 +1,41 @@
 [
   {
+    "week": "2026-W31",
+    "start": "2026-07-27",
+    "end": "2026-08-02",
+    "paper_count": 20,
+    "top_titles": [
+      "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
+      "RepBench: Compiling Benchmarks into Capability Representations for Large Language Models",
+      "FinSMART: Financial Sentiment Analysis for Algorithmic Trading through Market-Aligned Reinforcement Learning"
+    ],
+    "trends": [
+      {
+        "name": "数据集与基准",
+        "count": 18
+      },
+      {
+        "name": "标注、隐私与安全数据",
+        "count": 17
+      },
+      {
+        "name": "表格、语音与非文本数据",
+        "count": 5
+      },
+      {
+        "name": "数据选择与过滤",
+        "count": 2
+      },
+      {
+        "name": "合成数据与自生成数据",
+        "count": 1
+      }
+    ],
+    "file": "weekly/2026-W31.md",
+    "html_file": "weekly/2026-W31.html",
+    "updated_at": "2026-08-02T02:00:53+00:00"
+  },
+  {
     "week": "2026-W30",
     "start": "2026-07-20",
     "end": "2026-07-26",

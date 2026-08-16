@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 数据方向周报：2026-W33</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eaf7f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { max-width: 920px; margin: 0 auto; padding: 22px 16px 54px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(20px, 5vw, 46px);
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 10px 0 18px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    code {
+      background: var(--soft);
+      color: var(--accent-dark);
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .generated {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 40px; }
+      article { padding: 18px; }
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a href="../index.html">&larr; 返回周报首页</a>
+      <div class="links">
+        <a href="2026-W33.md">Markdown 源文件</a>
+      </div>
+    </nav>
+    <article>
+      <h1>AI 数据方向周报：2026-W33</h1>
+<ul>
+<li><strong>周期</strong>：2026-08-10 至 2026-08-16</li>
+<li><strong>生成时间</strong>：2026-08-16 02:00 UTC</li>
+<li><strong>论文数量</strong>：5</li>
+<li><strong>范围</strong>：arXiv API 不可用时的 OpenAlex 兜底检索结果，按 AI 数据相关关键词筛选近 7 天论文</li>
+</ul>
+<h2>本周概览</h2>
+<p>本周共筛出 <strong>5</strong> 篇数据相关论文，主要集中在：数据集与基准（4）、标注、隐私与安全数据（1）。</p>
+<p>优先关注前三篇：Large language models advance single-cell transcriptomics in major depressive disorder；LoRA-based Adaptation Alone Is Not Enough: Understanding the Limits of Foundation Models for Face Presentation Attack Detection；AI driven multi modal deep learning system for wheat disease detection, yield prediction, and crop health monitoring。</p>
+<h2>趋势信号</h2>
+<ul>
+<li><strong>数据集与基准</strong>：4 篇相关论文。</li>
+<li><strong>标注、隐私与安全数据</strong>：1 篇相关论文。</li>
+</ul>
+<h2>重点论文</h2>
+<h3>1. Large language models advance single-cell transcriptomics in major depressive disorder</h3>
+<ul>
+<li><strong>日期</strong>：2026-08-12</li>
+<li><strong>类别</strong>：OpenAlex · Single-cell and spatial transcriptomics</li>
+<li><strong>作者</strong>：Sugai Liang, Jinqi Ding, Jianqi Gao, Yan Yang</li>
+<li><strong>作者单位</strong>：Sugai Liang（Affiliated Mental Health Center &amp; Hangzhou Seventh People’s Hospital, School of Medicine, Zhejiang University, Hangzhou, 310013, China）；Jinqi Ding（Affiliated Mental Health Center &amp; Hangzhou Seventh People’s Hospital, School of Medicine, Zhejiang University, Hangzhou, 310013, China）；Jianqi Gao（Department of Computer Science and Engineering, Shanghai Jiao Tong University, Shanghai, 200240, China）；Yan Yang（Affiliated Mental Health Center &amp; Hangzhou Seventh People’s Hospital, School of Medicine, Zhejiang University, Hangzhou, 310013, China）</li>
+<li><strong>关键词</strong>：benchmark、annotation</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.1038/s41398-026-04279-w">https://doi.org/10.1038/s41398-026-04279-w</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Major depressive disorder (MDD) exhibits substantial heterogeneity, posing challenges for its diagnosis and treatment. Single-cell RNA sequencing (scRNA-seq) has emerged as a powerful tool for delineating cellular programs in neuronal and immune populations implicated in MDD pathogenesis. Advances in large language models (LLMs) are now enhancing single-cell analysis by improving annotation, clustering, regulatory network inference, and in silico perturbation to prioritize druggable targets. Integration with proteomic, metabolomic, epigenomic, and spatial data further clarifies disease mechanisms and potential biomarkers. Key challenges including data heterogeneity, model interpretability, computational scale, and ethical data usage remain to be addressed through rigorous benchmarks and validation to accelerate translation. Collectively, integration of LLMs with single-cell technologies provides a framework for more precise, cell-resolved hypothesis generation in MDD, while prospective validation of patient- level clinical utility remains a key next step.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>2. LoRA-based Adaptation Alone Is Not Enough: Understanding the Limits of Foundation Models for Face Presentation Attack Detection</h3>
+<ul>
+<li><strong>日期</strong>：2026-08-10</li>
+<li><strong>类别</strong>：OpenAlex · Biometric Identification and Security</li>
+<li><strong>作者</strong>：Peter Lorenz, Anjith George, Marcel Sébastien</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2608.09633">https://arxiv.org/abs/2608.09633</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Face presentation attack detection (PAD) aims to reliably detect a wide range of presentation attacks. While PAD methods achieve strong performance within individual datasets, their performance degrades under cross-dataset evaluation. Variations in sensors or lighting conditions can reduce the effectiveness of detectors from near- perfect to nearly random. Foundation models (FMs) have emerged as a promising alternative because typical PAD datasets, such as the MCIO benchmarks (MSU-MFSD, CASIA- FASD, Replay-Attack, and OULU-NPU), are small relative to the scale used for web-based pretraining. However, existing PAD systems primarily focus on CLIP-based foundation models, while overlooking other FMs with different architectures and training procedures. This study addresses this question by systematically evaluating 32 FMs. Zero-shot prompting achieves performance near chance across model families and scales. The vision encoders, when low-rankadapted (LoRA) with fewer than 1% trainable weights, achieve below 2% intra-dataset ACER in most cases, while cross-dataset ACER is substantially higher. LoRA primarily refines the decision boundary within a dataset, suggesting that pretrained representations and the adaptation dataset play a larger role in cross-dataset generalization than the evaluated lightweight adaptation strategy.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是构造可复现实验基准，把任务、数据、指标和错误类型固定下来，用统一评测暴露模型在真实场景中的能力边界。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可沉淀航空专用基准集，例如维修诊断、航班运行风险识别、签派决策解释、运行文档问答和多源告警归因，形成跨模型可比较的评测体系。</li>
+</ul>
+<h3>3. AI driven multi modal deep learning system for wheat disease detection, yield prediction, and crop health monitoring</h3>
+<ul>
+<li><strong>日期</strong>：2026-08-13</li>
+<li><strong>类别</strong>：OpenAlex · Smart Agriculture and AI</li>
+<li><strong>作者</strong>：Priyanshu Priyadarshi, Ganesh Khekare</li>
+<li><strong>作者单位</strong>：Priyanshu Priyadarshi（School of Computer Science and Engineering, Vellore Institute of Technology）；Ganesh Khekare（School of Computer Science and Engineering, Vellore Institute of Technology）</li>
+<li><strong>关键词</strong>：training data</li>
+<li><strong>链接</strong>：<a href="https://doi.org/10.3389/fpls.2026.1769915">https://doi.org/10.3389/fpls.2026.1769915</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Sustainable wheat farming is challenging. Real-time information on crop health, disease transmission, and anticipated yields is essential for farmers. However, they frequently use slow, expensive, or non-communicative tools. This project develops a workable solution. There is no need for massive server farms because the entire system operates on a single graphics card. It incorporates images of wheat fields, Indian farming notes, greenhouse records, harvest statistics, and NASA meteorological data. Consider them as various “eyes” for crop photo analysis, and we tried several lightweight computer vision models. ConvNeXt-Tiny was slower but could operate on older equipment with 75% accuracy; EfficientNetB0 recognised wheat heads with 92% accuracy; and AgroMark, a hybrid solution that merged photo analysis with agricultural metadata (soil type, rainfall, increased to 87%, etc. Combining picture analysis with attention mechanisms (CBAM) allowed us to anticipate the amount of wheat that a field will yield based on these photo insights, and the results showed that our predictions were accurate, with an R 2 score of 0.97. Additionally, we developed a versatile detector that simultaneously detects disease, stress, head count, and pests. It is adjusted to deal with training data that is unbalanced (some diseases are common, while others are rare). As we packed everything into a 16-GB graphics card, we spent real time determining which strategies smaller training sets, removing weak features, and adjusting loss functions, work. We encounter real-world obstacles along the road, such as photographs from different locations not always match, mislabeled photographs from different locations not always match, mislabeled diseases, and neglected rare pests. Our step-by-step instructions, charts, and code are available.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇与 AI 数据基础设施相关，建议人工复核其数据构建、训练语料或评估语料是否可复用。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把文本之外的图像、视频、语音或表格数据组织成可训练/可评测样本，使模型能够处理更接近真实业务流程的多源信息。</li>
+<li><strong>主要亮点</strong>：亮点在于：低资源或稀缺场景下的数据构建思路；标注体系和标签定义；多模态或结构化数据组织方式。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把机载参数、维修图片、机场视频、语音通话、气象报文和运行表格对齐到同一事件时间线，支持多模态诊断和态势理解。</li>
+</ul>
+<h3>4. Retrieval-Augmented Vision Foundation Models for Robust Leukemia Cell Classification across Multiple Microscopy Datasets</h3>
+<ul>
+<li><strong>日期</strong>：2026-08-11</li>
+<li><strong>类别</strong>：OpenAlex · Digital Imaging for Blood Diseases</li>
+<li><strong>作者</strong>：Carlos Zamora, Hiram Zuniga, Ulises Orozco-Rosas, Kenia Picos</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：dataset、benchmark</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2608.10657">https://arxiv.org/abs/2608.10657</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Leukemia cell image classification is challenged by real-world domain shifts from acquisition, staining, illumination, and site protocols, causing single-dataset models to generalize poorly in real clinical scenarios. This work presents a robust framework for leukemia classification across multiple heterogeneous datasets using a two-stage pipeline with a pretrained vision foundation model. Stage 1 performs binary classification (leukemia vs. non-leukemia) and is trained using 122,167 single-cell images. Stage 2 is conditionally applied to Stage 1 positives to perform subtype classification into Acute Lymphoblastic Leukemia (ALL) and Acute Myeloid Leukemia (AML), trained using 69,400 single-cell images. Labels are harmonized across five heterogeneous datasets to enable cross-dataset training, and performance is evaluated on a held-out dataset protocol to assess domain-shift generalization. Within this pipeline, three encoders are benchmarked (DinoBloom, pretrained on single-cell images; BiomedCLIP, pretrained on biomedical data; and CLIP as a general-purpose model) under linear probing, Low-Rank Adaptation (LoRA), and a Retrieval-Augmented Classification (RAC) module that retrieves the top-k most similar cell images to provide cytomorphological grounding. The objective is to quantify how much domain-specific pretraining contributes to performance under domain shift, and whether cost-effective adaptation and retrieval can be a viable alternative to expensive domain-specialized pretraining. The held-out protocol additionally serves as a diagnostic tool, revealing when classification performance is attributable to dataset-specific artifacts rather than to cytomorphological features.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；基于证据的检索、长上下文或抽取能力；标注体系和标签定义。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h3>5. ELBench: A Multi-Dimensional Benchmark for Education-Facing Large Language Models</h3>
+<ul>
+<li><strong>日期</strong>：2026-08-10</li>
+<li><strong>类别</strong>：OpenAlex · Topic Modeling</li>
+<li><strong>作者</strong>：Yilin Jiang, Xiaorong Zhu, Fei Tan, Zicheng Zhang, Kaiyi Huang, Yang Yu, et al.</li>
+<li><strong>作者单位</strong>：arXiv 未提供作者单位；建议查看论文 PDF 首页或项目页确认高校/实验室。</li>
+<li><strong>关键词</strong>：benchmark</li>
+<li><strong>链接</strong>：<a href="https://arxiv.org/abs/2608.09548">https://arxiv.org/abs/2608.09548</a></li>
+</ul>
+<p><strong>摘要摘录</strong></p>
+<p>Large language models are increasingly deployed in education as tutors, teaching assistants, and content generators. These roles place demands that ordinary question answering does not: a usable education-facing model is supposed to be accurate, safe under sensitive prompts, instructionally useful, and aligned with pedagogical goals at the same time. Existing benchmarks evaluate these requirements largely in isolation, so none assesses education-facing suitability as an integrated profile. We introduce ELBench, the first benchmark to evaluate all four requirements (General Capability, Safety and Trustworthiness, Basic Education, and High-Level Cultivation) on the same models under a common protocol, combining curated public sources with newly synthesized safety and cultivation data. We evaluate nine models, seven frontier general-purpose systems and two education-specialized variants, and report three findings. First, module-level profiles are more informative than a single aggregate: the top six models are statistically indistinguishable on overall score, yet their module leaders differ substantially, and safety is anti-correlated with practical teaching (r = -0.83). Second, the Chinese-developed models lead the safety module, the most discriminative in the suite; this advantage is largest on region-specific normative content and narrows, but does not vanish, on universal-harm content. Third, the two education-specialized models lead neither education module, and on High-Level Cultivation all models share a systematic blind spot: on the structured judgment task they converge on the same non- reference option, favoring pedagogical style over fit to the stated goal, so the module scores uniformly low and does not separate models. This raises, but does not resolve, whether domain post-training keeps pace with frontier systems on education tasks.</p>
+<p><strong>数据角度初判</strong></p>
+<p>这篇更偏向数据集或基准构建，值得关注数据来源、授权、规模、标注方式和污染检查。</p>
+<p><strong>中文解读与航空 AI 数据启示</strong></p>
+<ul>
+<li><strong>核心逻辑</strong>：论文的核心逻辑是把非结构化知识或长文档转化为可检索、可引用、可评测的问答/抽取任务，用数据组织和证据约束提升模型回答的可靠性。</li>
+<li><strong>主要亮点</strong>：亮点在于：可复现的评测任务和指标设计；数据安全、隐私或污染控制。</li>
+<li><strong>航空 AI 数据参考</strong>：对航空 AI 数据的借鉴是：可把维修手册、适航条款、运行通告、飞行报告和故障记录整理成带证据链的问答/抽取数据，用于训练面向工程师和运行人员的可追溯助手。</li>
+</ul>
+<h2>下周跟进</h2>
+<ol>
+<li>检查高分论文是否有代码或数据集发布。</li>
+<li>记录可复用的数据构建方法、过滤规则和评估基准。</li>
+<li>对重复出现的主题做跨周趋势比较。</li>
+</ol>
+      <div class="generated">Markdown 更新时间：2026-08-16 02:00 UTC</div>
+    </article>
+  </div>
+</body>
+</html>
